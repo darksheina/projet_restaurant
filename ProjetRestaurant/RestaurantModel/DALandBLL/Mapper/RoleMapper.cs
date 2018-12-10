@@ -1,13 +1,31 @@
+using RestaurationModel.DALandBLL.Business;
+using RestaurationModel.DALandBLL.Persistance;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace RestaurationModel.DALandBLL.Mapper
 {
 	public class RoleMapper {
-		public Business.ActionBusiness Map(Persistance.RoleDAO action) {
-			throw new System.Exception("Not implemented");
+		public static RoleBusiness Map(Persistance.RoleDAO role) {
+            return new RoleBusiness
+            {
+                ID = role.ID,
+                Entitled = role.Entitled,
+            };
 		}
-		public Persistance.ActionDAO Map(Business.RoleBusiness action) {
-			throw new System.Exception("Not implemented");
+		public static RoleDAO Map(Business.RoleBusiness role) {
+            return new RoleDAO
+            {
+                ID = role.ID,
+                Entitled = role.Entitled,
+            };
 		}
+
+        public static List<RoleBusiness> Map(List<RoleDAO> roles)
+        {
+            return (from v in roles select Map(v)).ToList();
+        }
 
 	}
 

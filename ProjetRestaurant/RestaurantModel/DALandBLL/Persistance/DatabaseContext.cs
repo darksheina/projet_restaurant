@@ -2,17 +2,23 @@ using Microsoft.EntityFrameworkCore;
 using System;
 namespace RestaurationModel.DALandBLL.Persistance
 {
-	public class DatabaseContext {
-		public DbSet<RoleDAO> Profession;
+	public class DatabaseContext : DbContext {
+	
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"");
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
-		protected void OnConfiguring(DbContextOptionsBuilder optionBuilder) {
-			throw new System.Exception("Not implemented");
-		}
-		protected void OnModelCreating(ModelBuilder modelBuilder) {
-			throw new System.Exception("Not implemented");
-		}
+        }
+
+        public DbSet<ActionDAO> Action;
+        public DbSet<RoleDAO> Role;
+        public DbSet<ScenarioDAO> Scenario;
+        public DbSet<ScenarioTypeDAO> ScenarioType;
 
 
-	}
+    }
 
 }

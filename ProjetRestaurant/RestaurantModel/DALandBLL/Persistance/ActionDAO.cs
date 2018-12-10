@@ -1,10 +1,11 @@
 using System;
+using RestaurationModel.DALandBLL.Business;
+
 namespace RestaurationModel.DALandBLL.Persistance {
 	public class ActionDAO {
-		public int ID;
-		public string Name;
-		public string MethodRef;
-
-	}
+		public int ID { get; set; }
+		public string Entitled { get; set; }
+		public string MethodRef { get; set; }
+    }
 
 }
