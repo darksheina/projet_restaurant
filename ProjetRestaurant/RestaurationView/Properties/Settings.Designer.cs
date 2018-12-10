@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RestaurantView.Properties
+namespace RestaurationView.Properties
 {
 
 
