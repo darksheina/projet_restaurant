@@ -6,11 +6,11 @@ namespace RestaurationModel.DALandBLL.Persistance
 	
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=217.182.91.216,1433;User ID=SA;Database=a45d1a057fb1.Restaurant.dbo;Password=Exi@2018;Trusted_Connection=True;");
+           //optionsBuilder.UseSqlServer(@"Data Source=217.182.91.216,1433;Initial Catalog=Restaurant;User ID=SA;Password=***********");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.Entity<RefersToDAO>().HasKey(vf => new { vf.Role, vf.Action });
         }
 
         public DbSet<ActionDAO> Action;

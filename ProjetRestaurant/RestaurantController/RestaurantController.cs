@@ -1,12 +1,12 @@
 using RestaurationModel;
-using RestaurationView;
+//using RestaurationView;
 namespace RestaurationController
 {
     public class RestaurantController {
         private RestaurantModel restaurantModel1;
-        private RestaurantView restaurantView;
+        //private RestaurantView restaurantView;
 
-        public RestaurantController(RestaurantModel restaurantModel, RestaurationView.RestaurantView restaurantView) {
+        public RestaurantController(RestaurantModel restaurantModel /*RestaurationView.RestaurantView restaurantView*/) {
 			
         }
 		public void StartScenario() {
@@ -27,7 +27,7 @@ namespace RestaurationController
 		}
 
         public RestaurantModel RestaurantModel { get => RestaurantModel; set => RestaurantModel = value; }
-        public RestaurantView RestaurantView { get => restaurantView; set => restaurantView = value; }
+       /* public RestaurantView RestaurantView { get => restaurantView; set => restaurantView = value; }*/
     }
 
 }

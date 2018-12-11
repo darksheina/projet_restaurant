@@ -7,7 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RestaurantModel\RestaurationModel.csproj" />
-    <ProjectReference Include="..\RestaurationView\RestaurationView.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
 using RestaurationModel.DALandBLL.Business;
 using RestaurationModel.DALandBLL.Mapper;
 using RestaurationModel.DALandBLL.Persistance;
 using System;
+using System.Linq;
+using System.Collections.Generic;
+
 namespace RestaurationModel.DALandBLL.Service
 {
 	public class ScenarioService {
@@ -38,7 +42,11 @@ namespace RestaurationModel.DALandBLL.Service
             }
         }
 
-		
-	}
+        public List<ScenarioBusiness> Select()
+        {
+            return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
+                    select ScenarioMapper.Map(p)).ToList();
+        }
+    }
 
 }
