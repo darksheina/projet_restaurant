@@ -2,6 +2,9 @@ using RestaurationModel.DALandBLL.Business;
 using RestaurationModel.DALandBLL.Mapper;
 using RestaurationModel.DALandBLL.Persistance;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace RestaurationModel.DALandBLL.Service
 {
 	public class RoleService {
@@ -35,9 +38,11 @@ namespace RestaurationModel.DALandBLL.Service
                 context.SaveChanges();
             }
 		}
+        public List<RoleBusiness> Select()
+        {
+            return (from p in context.Role select RoleMapper.Map(p)).ToList();
+        }
 
-		
-
-	}
+    }
 
 }

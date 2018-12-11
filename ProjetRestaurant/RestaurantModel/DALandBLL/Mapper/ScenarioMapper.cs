@@ -15,7 +15,7 @@ namespace RestaurationModel.DALandBLL.Mapper
                 Description = scenario.Description,
                 Order = scenario.Order,
                 Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
-                ScenarioType = scenario.ScenarioType != null ? ScenarioTypeMapper.Map(scenario.ScenarioType): null,
+                ScenarioType = scenario.ScenarioType != null ? TypeScenarioMapper.Map(scenario.ScenarioType): null,
             };
 		}
 		public static ScenarioDAO Map(ScenarioBusiness scenario) {
@@ -25,14 +25,17 @@ namespace RestaurationModel.DALandBLL.Mapper
                 Description = scenario.Description,
                 Order = scenario.Order,
                 Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
-                ScenarioType = scenario.ScenarioType != null ? ScenarioTypeMapper.Map(scenario.ScenarioType) : null,
+                ScenarioType = scenario.ScenarioType != null ? TypeScenarioMapper.Map(scenario.ScenarioType) : null,
             };
 		}
 		public static List<ScenarioBusiness> Map(List<ScenarioDAO> scenarios) {
             return (from v in scenarios select Map(v)).ToList();
 		}
-		
 
-	}
+        internal static object Map(RoleDAO p)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }

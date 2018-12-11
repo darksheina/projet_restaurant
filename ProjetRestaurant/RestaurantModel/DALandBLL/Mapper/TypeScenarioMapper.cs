@@ -6,26 +6,26 @@ using System.Linq;
 
 namespace RestaurationModel.DALandBLL.Mapper
 {
-    public class ScenarioTypeMapper
+    public class TypeScenarioMapper
     {
-        public static ScenarioTypeBusiness Map(ScenarioTypeDAO scenarioType)
+        public static TypeScenarioBusiness Map(TypeScenarioDAO scenarioType)
         {
-            return new ScenarioTypeBusiness
+            return new TypeScenarioBusiness
             {
                 ID = scenarioType.ID,
                 Entitled = scenarioType.Entitled,
             };
         }
-        public static ScenarioTypeDAO Map(ScenarioTypeBusiness scenarioType)
+        public static TypeScenarioDAO Map(TypeScenarioBusiness scenarioType)
         {
-            return new ScenarioTypeDAO
+            return new TypeScenarioDAO
             {
                 ID = scenarioType.ID,
                 Entitled = scenarioType.Entitled,
             };
         }
 
-        public static List<ScenarioTypeBusiness> Map(List<ScenarioTypeDAO> scenarioTypes)
+        public static List<TypeScenarioBusiness> Map(List<TypeScenarioDAO> scenarioTypes)
         {
             return (from v in scenarioTypes select Map(v)).ToList();
 

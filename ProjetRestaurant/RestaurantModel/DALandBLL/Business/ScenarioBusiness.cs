@@ -6,7 +6,7 @@ namespace RestaurationModel.DALandBLL.Business
 		public int ID { get; set; }
 		public string Description { get; set; }
 		public int Order { get; set; }
-		public ScenarioTypeBusiness ScenarioType { get; set; }
+		public TypeScenarioBusiness ScenarioType { get; set; }
 		public ActionBusiness Action { get; set; } 
 
 	}

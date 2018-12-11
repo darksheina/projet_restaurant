@@ -8,11 +8,13 @@ using System.Collections.Generic;
 
 namespace RestaurationModel.DALandBLL.Service
 {
-	public class ScenarioService {
+    public class ScenarioService {
         DatabaseContext context;
 
         public ScenarioService()
         {
+            Console.Write("CContext");
+            Console.Read();
             context = new DatabaseContext();
         }
         public void Add(ScenarioBusiness scenario) {
@@ -20,7 +22,7 @@ namespace RestaurationModel.DALandBLL.Service
             context.Scenario.Add(entity);
             context.SaveChanges();
         }
-		public void Delete(ScenarioBusiness scenario) {
+        public void Delete(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
             if (entity != null)
             {
@@ -28,10 +30,10 @@ namespace RestaurationModel.DALandBLL.Service
                 context.SaveChanges();
             }
         }
-		public void Get(string name) {
-			//ToDo
-		}
-		public void Update(ScenarioBusiness scenario) {
+        public void Get(string name) {
+            //ToDo
+        }
+        public void Update(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
             if (entity != null)
             {
@@ -43,7 +45,7 @@ namespace RestaurationModel.DALandBLL.Service
         }
 
         public List<ScenarioBusiness> Select()
-        {
+        { 
             return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
                     select ScenarioMapper.Map(p)).ToList();
         }
