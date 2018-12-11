@@ -6,9 +6,16 @@ namespace RestaurationModel.Kitchen
 {
    public class AssistantCook
     {
+        private readonly object assistantCookLock = new object();
+
         public Food PutFoodOnCounter()
         {
-            throw new System.Exception("Not implemented");
+            lock (assistantCookLock)
+            {
+                // TODO : prendre le plat et le mettre dans la zone
+                throw new System.Exception("Not implemented");
+            }
+            
         }
 
         public Food MakeFood()

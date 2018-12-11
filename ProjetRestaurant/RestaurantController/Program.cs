@@ -7,7 +7,7 @@ namespace RestaurantController
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
 
             CustomerGroup customer = new CustomerGroup();
             customer.SetGroupNumber(); // TODO : action bdd
@@ -31,8 +31,8 @@ namespace RestaurantController
             customer.ChooseOrder();
 
             // TODO : le client passe commande
-            // TODO : Le headwaiter transmet
-            // TODO : Le headWaiter ramène les cartes
+            // TODO : Le headwaiter transmet la commande
+            headwaiter.GetBackMenu(customer.IDTable, customer.GroupID); // headWaiter ramène les cartes
             // TODO : Le serveur amène les plats quand ils sont tous prêts
             // TODO : Le client mange
             // TODO : ...
@@ -40,8 +40,7 @@ namespace RestaurantController
             // TODO : Le client va payer
             // TODO : Le client paye
             // TODO : Le serveur débarasse la table
-            headwaiter.DressageTable(customer.IDTable);
-            // TODO : Le headwaiter dresse la nouvelle table
+            headwaiter.DressageTable(customer.IDTable); // headwaiter dresse la nouvelle table
 
             Console.ReadLine();
 

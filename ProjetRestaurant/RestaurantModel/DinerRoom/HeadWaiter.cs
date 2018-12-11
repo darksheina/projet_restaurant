@@ -22,12 +22,18 @@ namespace RestaurationModel.DinerRoom
             Console.WriteLine("HeadWaiter : Je vais chercher les cartes pour les " + nbCustomers + " personnes de la table " + IDTable); // TODO : a enlever --> log
             Thread.Sleep(2000); //wait 2sec for get menus
         }
-		//public List<Model.Kitchen.Food> GetGroupOrder() {
-		//	throw new System.Exception("Not implemented");
-		//}
-		//public void GiveOrder(list<String> order) {
-		//	throw new System.Exception("Not implemented");
-		//}
+        public void GetBackMenu(int nbCustomers, int IDTable)
+        {
+            Console.WriteLine("HeadWaiter : Je vais ramener les cartes pour les " + nbCustomers + " personnes de la table " + IDTable); // TODO : a enlever --> log
+            Thread.Sleep(2000); //wait 2sec for get back menus
+        }
+
+        //public List<Model.Kitchen.Food> GetGroupOrder() {
+        //	throw new System.Exception("Not implemented");
+        //}
+        //public void GiveOrder(list<String> order) {
+        //	throw new System.Exception("Not implemented");
+        //}
         public void ShowTableToCustomers(int IDTable, int GroupID)
         {
             Console.WriteLine("HeadWaiter : On place le client " + GroupID + " a la table " + IDTable); // TODO : a enlever --> log
