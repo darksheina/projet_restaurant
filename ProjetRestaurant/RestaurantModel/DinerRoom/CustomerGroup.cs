@@ -1,12 +1,14 @@
 using System;
+using System.Threading;
+
 namespace RestaurationModel.DinerRoom
 {
 	public class CustomerGroup {
 		public int GroupNumber;
-		public List<Model.Kitchen.Food> GroupOrder;
+	//	public List<Model.Kitchen.Food> GroupOrder;
 		public int IDTable;
 		public int GroupID;
-		public EatStrategy EatStrategy;
+	//	public EatStrategy EatStrategy;
 
 		public void AskBread() {
 			throw new System.Exception("Not implemented");

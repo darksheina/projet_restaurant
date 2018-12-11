@@ -18,7 +18,7 @@ namespace RestaurationView {
 			throw new System.Exception("Not implemented");
 		}
 
-		private Controller.RestaurantController restaurantController;
+		//private Controller.RestaurantController restaurantController;
 
 	}
 
