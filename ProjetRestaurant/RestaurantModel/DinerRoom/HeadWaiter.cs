@@ -8,22 +8,29 @@ namespace RestaurationModel.DinerRoom
 		public void DressageTable(int iDTable, enum_string tableStatus) {
 			throw new System.Exception("Not implemented");
 		}
-		public void GiveMenu(int iDTable, int seatNumber) {
-			throw new System.Exception("Not implemented");
-		}
-		public void GetMenu() {
-			throw new System.Exception("Not implemented");
-		}
+        public void GiveMenu(int nbCustomers, int IDTable)
+        {
+            Console.WriteLine("HeadWaiter : Je donne les cartes pour les " + nbCustomers + " personnes de la table " + IDTable); // TODO : a enlever --> log
+            Thread.Sleep(2000); //wait 2sec for give menus
+        }
+        public void GetMenu(int nbCustomers, int IDTable)
+        {
+            Console.WriteLine("HeadWaiter : Je vais chercher les cartes pour les " + nbCustomers + " personnes de la table " + IDTable); // TODO : a enlever --> log
+            Thread.Sleep(2000); //wait 2sec for get menus
+        }
 		public List<Model.Kitchen.Food> GetGroupOrder() {
 			throw new System.Exception("Not implemented");
 		}
 		public void GiveOrder(list<String> order) {
 			throw new System.Exception("Not implemented");
 		}
-		public void ShowTableToCustomers() {
-			throw new System.Exception("Not implemented");
-		}
-		public void Update(Model.Salle de restauration.Observable observable) {
+        public void ShowTableToCustomers(int IDTable, int GroupID)
+        {
+            Console.WriteLine("HeadWaiter : On place le client " + GroupID + " a la table " + IDTable); // TODO : a enlever --> log
+            // TODO : Wait ? c'est le Maitre d'hotel qui bloque la table ?
+            Thread.Sleep(2000); //wait 2sec for bring customers to their table
+        }
+		public void Update(Observable observable) {
 			throw new System.Exception("Not implemented");
 		}
 
