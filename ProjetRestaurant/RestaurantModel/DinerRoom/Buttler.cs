@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
+
 namespace RestaurationModel.DinerRoom
 {
 	public class Buttler {
-		public void GetTableStatus(list<Model.Salle de restauration.Table> tableList) {
+		public void GetTableStatus(List<Table> tableList) {
 			throw new System.Exception("Not implemented");
 		}
 		public void GetCustomerGroupNumber() {

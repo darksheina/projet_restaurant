@@ -1,11 +1,15 @@
+using RestaurationModel.Kitchen;
 using System;
+using System.Collections.Generic;
+using static RestaurationModel.Table;
+
 namespace RestaurationModel.DinerRoom
 {
 	public class HeadWaiter {
 		public int SquareAssign;
 		public int RankAssign;
 
-		public void DressageTable(int iDTable, enum_string tableStatus) {
+		public void DressageTable(int iDTable, TableStatus status) {
 			throw new System.Exception("Not implemented");
 		}
 		public void GiveMenu(int iDTable, int seatNumber) {
@@ -14,19 +18,16 @@ namespace RestaurationModel.DinerRoom
 		public void GetMenu() {
 			throw new System.Exception("Not implemented");
 		}
-		public List<Model.Kitchen.Food> GetGroupOrder() {
+		public List<Food> GetGroupOrder() {
 			throw new System.Exception("Not implemented");
 		}
-		public void GiveOrder(list<String> order) {
+		public void GiveOrder(List<Food> order) {
 			throw new System.Exception("Not implemented");
 		}
 		public void ShowTableToCustomers() {
 			throw new System.Exception("Not implemented");
 		}
-		public void Update(Model.Salle de restauration.Observable observable) {
-			throw new System.Exception("Not implemented");
-		}
-
+		
 		private Person person;
 
 	}

@@ -6,7 +6,7 @@ namespace RestaurationModel.DALandBLL.Persistance
 	
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"");
+            optionsBuilder.UseSqlServer(@"Server=217.182.91.216,1433;User ID=SA;Database=a45d1a057fb1.Restaurant.dbo;Password=Exi@2018;Trusted_Connection=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -17,6 +17,7 @@ namespace RestaurationModel.DALandBLL.Persistance
         public DbSet<RoleDAO> Role;
         public DbSet<ScenarioDAO> Scenario;
         public DbSet<ScenarioTypeDAO> ScenarioType;
+        public DbSet<RefersToDAO> RefersTo;
 
 
     }

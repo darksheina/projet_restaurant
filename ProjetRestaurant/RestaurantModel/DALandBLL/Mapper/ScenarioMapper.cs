@@ -14,8 +14,8 @@ namespace RestaurationModel.DALandBLL.Mapper
                 ID = scenario.ID,
                 Description = scenario.Description,
                 Order = scenario.Order,
-                ActionID = scenario.ActionID != null ? ActionMapper.Map(scenario.ActionID) : null,
-                ScenarioTypeID = scenario.ScenarioTypeID != null ? ScenarioTypeMapper.Map(scenario.ScenarioTypeID): null,
+                Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
+                ScenarioType = scenario.ScenarioType != null ? ScenarioTypeMapper.Map(scenario.ScenarioType): null,
             };
 		}
 		public static ScenarioDAO Map(ScenarioBusiness scenario) {
@@ -24,8 +24,8 @@ namespace RestaurationModel.DALandBLL.Mapper
                 ID = scenario.ID,
                 Description = scenario.Description,
                 Order = scenario.Order,
-                ActionID = scenario.ActionID != null ? ActionMapper.Map(scenario.ActionID) : null,
-                ScenarioTypeID = scenario.ScenarioTypeID != null ? ScenarioTypeMapper.Map(scenario.ScenarioTypeID) : null,
+                Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
+                ScenarioType = scenario.ScenarioType != null ? ScenarioTypeMapper.Map(scenario.ScenarioType) : null,
             };
 		}
 		public static List<ScenarioBusiness> Map(List<ScenarioDAO> scenarios) {

@@ -1,11 +1,18 @@
 using System;
+using System.Data.SqlClient;
+
 namespace RestaurationModel
 {
     public class RestaurantModel
     {
         public void Main()
         {
-            throw new System.Exception("Not implemented");
+            string connectionString;
+            SqlConnection cnn;
+            cnn = new SqlConnection();
+            cnn.Open();
+            Console.WriteLine("connection Open!");
+            cnn.Close();
         }
 
         private Scenario scenario;
