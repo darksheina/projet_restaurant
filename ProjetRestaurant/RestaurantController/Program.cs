@@ -22,23 +22,27 @@ namespace RestaurantController
             List<ActionBusiness> plop3 = actionservice.Select();
             foreach (var item in plop3)
             {
-                Console.WriteLine("\nNom de l'action : " + item.Entitled+"\nMethode à laquelle on fait reference :"+item.MethodRef);
+                Console.WriteLine("\n");
+                Console.WriteLine("Nom de l'action : " + item.Entitled+"\nMethode à laquelle on fait reference :"+item.MethodRef);
             }
 
             TypeScenarioService typescenarioservice;
             typescenarioservice = new TypeScenarioService();
             List<TypeScenarioBusiness> plop4 = typescenarioservice.Select();
+            Console.WriteLine("\n");
             foreach (var item in plop4)
             {
-                Console.WriteLine("Nom du type de Scénario : " + item.Entitled);
+               Console.WriteLine("Nom du type de Scénario : " + item.Entitled);
             }
-            /*ScenarioService scenarioService;
+            ScenarioService scenarioService;
             scenarioService = new ScenarioService();
             List<ScenarioBusiness> plop = scenarioService.Select();
-             foreach (var item in plop)
+            Console.WriteLine("\n");
+            foreach (var item in plop)
             {
-                Console.WriteLine("Description : " + item.Description + "Ordre d'execution : " + item.Order+ "Le type de scenario :"+ item.ScenarioType.Entitled+"Action"+item.Action.Entitled);
-            }*/
+               
+                Console.WriteLine("Description : " + item.Description + "\nOrdre d'execution : " + item.OrderStage + "\nLe type de scenario :"+ item.ScenarioType.Entitled+"Action"+item.Action.Entitled);
+            }
             Console.Read();
         }
     }

@@ -7,7 +7,7 @@ namespace RestaurationModel.DALandBLL.Persistance
 	public class ScenarioDAO {
 		public int ID { get; set; }
         public string Description { get; set; }
-        public int Order { get; set; }
+        public int OrderStage { get; set; }
         public int ID_type_scenario { get; set; }
         [ForeignKey ("ID_type_scenario")]
         public virtual TypeScenarioDAO ScenarioType { get; set; }

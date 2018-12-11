@@ -13,7 +13,7 @@ namespace RestaurationModel.DALandBLL.Mapper
             {
                 ID = scenario.ID,
                 Description = scenario.Description,
-                Order = scenario.Order,
+                OrderStage = scenario.OrderStage,
                 Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
                 ScenarioType = scenario.ScenarioType != null ? TypeScenarioMapper.Map(scenario.ScenarioType): null,
             };
@@ -23,7 +23,7 @@ namespace RestaurationModel.DALandBLL.Mapper
             {
                 ID = scenario.ID,
                 Description = scenario.Description,
-                Order = scenario.Order,
+                OrderStage = scenario.OrderStage,
                 Action = scenario.Action != null ? ActionMapper.Map(scenario.Action) : null,
                 ScenarioType = scenario.ScenarioType != null ? TypeScenarioMapper.Map(scenario.ScenarioType) : null,
             };

@@ -13,8 +13,6 @@ namespace RestaurationModel.DALandBLL.Service
 
         public ScenarioService()
         {
-            Console.Write("CContext");
-            Console.Read();
             context = new DatabaseContext();
         }
         public void Add(ScenarioBusiness scenario) {
@@ -38,7 +36,7 @@ namespace RestaurationModel.DALandBLL.Service
             if (entity != null)
             {
                 entity.Description = scenario.Description;
-                entity.Order = scenario.Order;
+                entity.OrderStage = scenario.OrderStage;
                 //ToDo TypeScenario and Action
                 context.SaveChanges();
             }
