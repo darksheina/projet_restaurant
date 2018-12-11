@@ -29,7 +29,12 @@ namespace RestaurationModel.DALandBLL.Service
             }
         }
         public void Get(string name) {
-            //ToDo
+            ScenarioBusiness scenario;
+            scenario = new ScenarioBusiness();
+            name = scenario.Description;
+            var entity = context.Scenario.Find(scenario.Description);
+            Console.WriteLine("Description :"+ entity.Description+"OrderStage :"+ entity.OrderStage);
+            Console.Read();
         }
         public void Update(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
