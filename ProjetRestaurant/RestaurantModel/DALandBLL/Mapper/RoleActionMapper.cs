@@ -7,27 +7,28 @@ using System.Text;
 
 namespace RestaurationModel.DALandBLL.Mapper
 {
-    class RefersToMapper
+    class RoleActionMapper
     {
-        public static RefersToBusiness Map(RefersToDAO refersto)
+        //Tranform a RefersToBusiness
+        public static RoleActionBusiness Map(RoleActionDAO refersto)
         {
-            return new RefersToBusiness
+            return new RoleActionBusiness
             {
                 Action = refersto.Action != null ? ActionMapper.Map(refersto.Action) : null,
                 Role = refersto.Role != null ? RoleMapper.Map(refersto.Role) : null,
             };
         }
 
-        public static RefersToDAO Map(RefersToBusiness refersto)
+        public static RoleActionDAO Map(RoleActionBusiness refersto)
         {
-            return new RefersToDAO
+            return new RoleActionDAO
             {
                 Action = refersto.Action != null ? ActionMapper.Map(refersto.Action) : null,
                 Role = refersto.Role != null ? RoleMapper.Map(refersto.Role) : null,
             };
         }
 
-        public static List<RefersToBusiness> Map(List<RefersToDAO> referstos)
+        public static List<RoleActionBusiness> Map(List<RoleActionDAO> referstos)
         {
             return (from v in referstos select Map(v)).ToList();
         }

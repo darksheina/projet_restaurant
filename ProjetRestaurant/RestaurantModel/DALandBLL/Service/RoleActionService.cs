@@ -18,14 +18,14 @@ namespace RestaurationModel.DALandBLL.Service
             context = new DatabaseContext();
         }
 
-        public void Add(RefersToBusiness refersTo)
+        public void Add(RoleActionBusiness refersTo)
         {
-            var entity = RefersToMapper.Map(refersTo);
+            var entity = RoleActionMapper.Map(refersTo);
             context.RefersTo.Add(entity);
             context.SaveChanges();
         }
 
-        public void Delete(RefersToBusiness refersTo)
+        public void Delete(RoleActionBusiness refersTo)
         {
             var entity = context.RefersTo.Find(refersTo.Action, refersTo.Role);
             if (entity != null)

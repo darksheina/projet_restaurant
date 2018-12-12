@@ -51,21 +51,31 @@ namespace RestaurantController
                 }
                 Console.Read();
             }
-            else
+            else if(String.Compare(saisie, "ajout") == 0)
             {
-                Console.WriteLine("Entitled : ");
-                string entitled = Console.ReadLine();
-                Console.WriteLine("\nMethodRef : ");
-                string methodRef = Console.ReadLine();
-                ScenarioService scenarioService;
-                scenarioService = new ScenarioService();
-                                /*ScenarioService scenarioService;
-                scenarioService = new ScenarioService();
-                Console.WriteLine("Entrez une description de scénario :");
-                string entree = Console.ReadLine();
-                scenarioService.Get(entree);*/
+                RoleBusiness role;
+                role = new RoleBusiness();
+                Console.WriteLine("Quel role ajouter ? :");
+                string text = Console.ReadLine();
+                role.Entitled = text;
+                RoleService roleservice;
+                roleservice = new RoleService();
+                roleservice.Add(role);
+                Console.WriteLine("Champ ajouter dans la BDD");
+                Console.Read();
+
+            }
+            else if (String.Compare(saisie, "get") == 0)
+            {
+                Console.WriteLine("Quel id chercher ? :");
+                string text = Console.ReadLine();
+                int num = Convert.ToInt32(text);
+                TypeScenarioService typeScenarioservice;
+                typeScenarioservice = new TypeScenarioService();
+                typeScenarioservice.Get(num);
             };
-             
+
+
         }
 
         

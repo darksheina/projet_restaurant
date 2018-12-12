@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RestaurationModel.DALandBLL.Persistance
 {
-    public class RefersToDAO
+    public class RoleActionDAO
     {
         public int ID_role { get; set; }
         [Key, Column(Order = 0)]

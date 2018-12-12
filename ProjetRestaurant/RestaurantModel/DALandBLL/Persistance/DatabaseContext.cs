@@ -10,14 +10,14 @@ namespace RestaurationModel.DALandBLL.Persistance
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<RefersToDAO>().HasKey(vf => new { vf.ID_role, vf.ID_action });
+            modelBuilder.Entity<RoleActionDAO>().HasKey(vf => new { vf.ID_role, vf.ID_action });
         }
 
         public DbSet<ActionDAO> Action { get; set; }
         public DbSet<RoleDAO> Role { get; set; }
         public DbSet<ScenarioDAO> Scenario { get; set; }
         public DbSet<TypeScenarioDAO> TypeScenario { get; set; }
-        public DbSet<RefersToDAO> RefersTo { get; set; }
+        public DbSet<RoleActionDAO> RefersTo { get; set; }
 
 
     }

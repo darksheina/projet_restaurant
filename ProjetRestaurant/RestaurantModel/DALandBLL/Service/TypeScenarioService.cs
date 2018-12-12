@@ -30,9 +30,14 @@ namespace RestaurationModel.DALandBLL.Service
                 context.SaveChanges();
             }
         }
-        public void Get(string name)
+        public void Get(int id)
         {
-            //ToDo
+            TypeScenarioBusiness scenarioBusiness;
+            scenarioBusiness = new TypeScenarioBusiness();
+            scenarioBusiness.ID = id;
+            var entity = context.TypeScenario.Find(scenarioBusiness.ID);
+            Console.WriteLine("ID :" + scenarioBusiness.ID + "Nom :" + scenarioBusiness.Entitled);
+            Console.Read();
         }
         public void Update(TypeScenarioBusiness scenarioType)
         {
