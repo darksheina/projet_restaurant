@@ -1,3 +1,4 @@
+using ProjectLibrary.Service;
 using System;
 namespace ProjetLibrary.Business.RestaurantDinerRoom
 {
@@ -18,7 +19,7 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
 
         public void SelectScenario()
         {
-            throw new System.Exception("Not implemented");
+                     
         }
 
         private Person person;
