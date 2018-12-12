@@ -6,7 +6,8 @@ namespace RestaurationModel {
         public int SleepyTime;
 
         private Kitchen.HeadChef headchef;
-	private Kitchen.Chef chef;
+        public enum PersonStatus { busy, free };
+        private Kitchen.Chef chef;
         private DinerRoom.Buttler buttler;
         private DinerRoom.CustomerGroup customerGroup;
         private DinerRoom.Waiter waiter;

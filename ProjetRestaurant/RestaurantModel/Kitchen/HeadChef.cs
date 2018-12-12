@@ -1,14 +1,21 @@
-﻿using System;
+﻿using RestaurationModel.DinerRoom;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace RestaurationModel.Kitchen
 {
-    public class HeadChef
+    public class HeadChef : Person
     {
-        public void GetAnOrder(List<Food> orders)
+        public int TableIdOrder;
+        public List<Food> groupOrder = new List<Food>();
+        public void GetAnOrder(Waiter waiter)
         {
-            throw new System.Exception("Not implemented");
+            this.TableIdOrder = waiter.CurrentTableIDOrder;
+            foreach (Kitchen.Food food in waiter.currentGroupOrder)
+            {
+                this.groupOrder.Add(food);
+            }
         }
 
         public void GiveTask()

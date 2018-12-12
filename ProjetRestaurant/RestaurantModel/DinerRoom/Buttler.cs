@@ -36,7 +36,8 @@ namespace RestaurationModel.DinerRoom
             // Methode à ameliorer pour un meilleur choix des tables
             if (group.GroupNumber <= table.SeatNumber)
             {
-                group.IDTable = table.IDTable;
+                group.SetGroupID(table.IDTable);
+                table.status = Table.TableStatus.taken;
             }
             else if (group.GroupNumber >= table.SeatNumber)
             {
