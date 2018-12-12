@@ -27,13 +27,10 @@ namespace ProjectLibrary.Service
                 context.SaveChanges();
             }
         }
-        public void Get(string name) {
-            ScenarioBusiness scenario;
-            scenario = new ScenarioBusiness();
-            name = scenario.Description;
-            var entity = context.Scenario.Find(scenario.Description);
-            Console.WriteLine("Description :"+ entity.Description+"OrderStage :"+ entity.OrderStage);
-            Console.Read();
+        public ScenarioBusiness Get(int id) {
+            var result = ScenarioMapper.Map((from p in context.Scenario where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.ScenarioType); //Test Console
+            return result;
         }
         public void Update(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
@@ -48,9 +45,7 @@ namespace ProjectLibrary.Service
 
         public List<ScenarioBusiness> Select()
         {
-            throw new NotImplementedException();
-            //return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
-                    //select ScenarioMapper.Map(p)).ToList();
+            return ScenarioMapper.Map((from p in context.Scenario select p).ToList());
         }
     }
 

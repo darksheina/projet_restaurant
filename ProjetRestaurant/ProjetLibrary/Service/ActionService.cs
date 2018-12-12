@@ -30,9 +30,11 @@ namespace ProjectLibrary.Service
             }
 			
 		}
-		public void Get(string name) {
-			//ToDo
-		}
+		public ActionBusiness Get(int id) {
+            var result = ActionMapper.Map((from p in context.Action where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.Entitled); //Test Console
+            return result;
+        }
 		public void Update(ActionBusiness action) {
             var entity = context.Action.Find(action.ID);
             if (entity != null)
@@ -45,8 +47,7 @@ namespace ProjectLibrary.Service
 		}
         public List<ActionBusiness> Select()
         {
-            throw new NotImplementedException();
-            //return (from p in context.Action select ActionMapper.Map(p)).ToList();
+            return ActionMapper.Map((from p in context.Action select p).ToList());
         }
 
 

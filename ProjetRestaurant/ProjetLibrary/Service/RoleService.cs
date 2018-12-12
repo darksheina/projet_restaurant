@@ -27,10 +27,22 @@ namespace RestaurantDinerRoom.DALandBLL.Service
                 context.SaveChanges();
             }
 		}
-		public void Get(string name) {
-			//ToDo
-		}
-		public void Update(RoleBusiness role) {
+        //Get avec un id
+        /*public RoleBusiness Get(int id) {
+            var result = RoleMapper.Map((from p in context.Role where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.Entitled); //Test Console
+            return result;
+        }*/
+
+        //Get avec un titre
+        public RoleBusiness Get(string name)
+        {
+            var result = RoleMapper.Map((from p in context.Role where p.Entitled == name select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.ID); //Test Console
+            return result;
+
+        }
+            public void Update(RoleBusiness role) {
             var entity = context.Role.Find(role.ID);
             if(entity != null)
             {
