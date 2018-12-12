@@ -1,13 +1,12 @@
-using RestaurantDinerRoom.DALandBLL.Business;
-using RestaurantDinerRoom.DALandBLL.Persistance;
+using ProjectLibrary.Business;
+using ProjectLibrary.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace RestaurantDinerRoom.DALandBLL.Mapper
+namespace ProjectLibrary.Mapper
 {
-	public class ScenarioMapper {
+    public class ScenarioMapper {
 		public static ScenarioBusiness Map(ScenarioDAO scenario) {
             return new ScenarioBusiness
             {

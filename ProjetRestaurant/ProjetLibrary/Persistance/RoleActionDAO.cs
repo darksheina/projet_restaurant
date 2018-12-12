@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace RestaurantDinerRoom.DALandBLL.Persistance
+namespace ProjectLibrary.Persistance
 {
     public class RoleActionDAO
     {

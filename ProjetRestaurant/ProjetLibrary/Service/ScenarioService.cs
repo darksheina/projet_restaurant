@@ -1,12 +1,11 @@
-using Microsoft.EntityFrameworkCore;
-using RestaurationModel.DALandBLL.Persistance;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using RestaurantDinerRoom.DALandBLL.Business;
-using RestaurantDinerRoom.DALandBLL.Mapper;
+using ProjectLibrary.Persistance;
+using ProjectLibrary.Business;
+using ProjectLibrary.Mapper;
 
-namespace RestaurantDinerRoom.DALandBLL.Service
+namespace ProjectLibrary.Service
 {
     public class ScenarioService {
         DatabaseContext context;
@@ -48,9 +47,10 @@ namespace RestaurantDinerRoom.DALandBLL.Service
         }
 
         public List<ScenarioBusiness> Select()
-        { 
-            return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
-                    select ScenarioMapper.Map(p)).ToList();
+        {
+            throw new NotImplementedException();
+            //return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
+                    //select ScenarioMapper.Map(p)).ToList();
         }
     }
 

@@ -7,7 +7,8 @@ namespace RestaurantKitchen.Kitchen
     public class HeadChef 
     {
         public int TableIdOrder;
-        public List<Food> groupOrder = new List<Food>();
+        public List<Food> GroupOrder;
+        public List<string> TaskList;
         /*public void GetAnOrder(Waiter waiter)
         {
             this.TableIdOrder = waiter.CurrentTableIDOrder;
@@ -17,9 +18,15 @@ namespace RestaurantKitchen.Kitchen
             }
         }*/
 
-        public void GiveTask()
+        public void GiveTask(List<Food> groupOrder)
         {
-
+            foreach (Food food in groupOrder)
+            {
+                if (food == Dish)
+                {
+                    
+                }
+            }
         }
     }
 }

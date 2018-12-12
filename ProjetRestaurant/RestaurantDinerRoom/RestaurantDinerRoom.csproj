@@ -213,27 +213,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DALandBLL\Business\ActionBusiness.cs" />
-    <Compile Include="DALandBLL\Business\RoleActionBusiness.cs" />
-    <Compile Include="DALandBLL\Business\RoleBusiness.cs" />
-    <Compile Include="DALandBLL\Business\ScenarioBusiness.cs" />
-    <Compile Include="DALandBLL\Business\TypeScenarioBusiness.cs" />
-    <Compile Include="DALandBLL\Mapper\ActionMapper.cs" />
-    <Compile Include="DALandBLL\Mapper\RoleActionMapper.cs" />
-    <Compile Include="DALandBLL\Mapper\RoleMapper.cs" />
-    <Compile Include="DALandBLL\Mapper\ScenarioMapper.cs" />
-    <Compile Include="DALandBLL\Mapper\TypeScenarioMapper.cs" />
-    <Compile Include="DALandBLL\Persistance\ActionDAO.cs" />
-    <Compile Include="DALandBLL\Persistance\DatabaseContext.cs" />
-    <Compile Include="DALandBLL\Persistance\RoleActionDAO.cs" />
-    <Compile Include="DALandBLL\Persistance\RoleDAO.cs" />
-    <Compile Include="DALandBLL\Persistance\ScenarioDAO.cs" />
-    <Compile Include="DALandBLL\Persistance\TypeScenarioDAO.cs" />
-    <Compile Include="DALandBLL\Service\ActionService.cs" />
-    <Compile Include="DALandBLL\Service\RoleActionService.cs" />
-    <Compile Include="DALandBLL\Service\RoleService.cs" />
-    <Compile Include="DALandBLL\Service\ScenarioService.cs" />
-    <Compile Include="DALandBLL\Service\TypeScenarioService.cs" />
     <Compile Include="DinerRoom\Assistant.cs" />
     <Compile Include="DinerRoom\Buttler.cs" />
     <Compile Include="DinerRoom\CustomerGroup.cs" />

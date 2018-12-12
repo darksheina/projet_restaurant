@@ -1,6 +1,6 @@
 using System;
 
-namespace RestaurantDinerRoom.DALandBLL.Persistance {
+namespace ProjectLibrary.Persistance {
 	public class ActionDAO {
 		public int ID { get; set; }
 		public string Entitled { get; set; }

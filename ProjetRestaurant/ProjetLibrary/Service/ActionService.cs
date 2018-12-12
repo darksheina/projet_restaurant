@@ -1,12 +1,12 @@
-using RestaurantDinerRoom.DALandBLL.Business;
-using RestaurantDinerRoom.DALandBLL.Mapper;
-using RestaurationModel.DALandBLL.Persistance;
-using System;
+using ProjectLibrary.Business;
+using ProjectLibrary.Mapper;
+using ProjectLibrary.Persistance;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RestaurantDinerRoom.DALandBLL.Service {
-	public class ActionService {
+namespace ProjectLibrary.Service
+{
+    public class ActionService {
 
         DatabaseContext context;
 

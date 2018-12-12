@@ -5,7 +5,6 @@ namespace RestaurantKitchen.Kitchen
     {
         public int PreparationTime;
         public decimal price;
-
+        public bool FoodStatus;
     }
-
 }

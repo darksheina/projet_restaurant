@@ -8,7 +8,7 @@ namespace RestaurantKitchen.Kitchen
     {
         public Food MakeFood()
         {
-            throw new System.Exception("Not implemented");
+           // Entry.
         }
 
         public void giveTask()
