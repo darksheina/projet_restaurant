@@ -30,12 +30,21 @@ namespace ProjectLibrary.Service
             }
 			
 		}
-		public ActionBusiness Get(int id) {
+        //Get by Id
+        /*public ActionBusiness Get(int id) {
             var result = ActionMapper.Map((from p in context.Action where p.ID == id select p).FirstOrDefault());
             Console.WriteLine("Result = {0}", result.Entitled); //Test Console
             return result;
+        }*/
+
+            // Get by action title
+        public ActionBusiness Get(string name)
+        {
+            var result = ActionMapper.Map((from p in context.Action where p.Entitled == name select p).FirstOrDefault());
+            return result;
         }
-		public void Update(ActionBusiness action) {
+
+        public void Update(ActionBusiness action) {
             var entity = context.Action.Find(action.ID);
             if (entity != null)
             {

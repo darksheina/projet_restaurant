@@ -27,11 +27,6 @@ namespace ProjectLibrary.Service
                 context.SaveChanges();
             }
         }
-        public ScenarioBusiness Get(int id) {
-            var result = ScenarioMapper.Map((from p in context.Scenario where p.ID == id select p).FirstOrDefault());
-            Console.WriteLine("Result = {0}", result.ScenarioType); //Test Console
-            return result;
-        }
         public void Update(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
             if (entity != null)
@@ -47,6 +42,15 @@ namespace ProjectLibrary.Service
         {
             return ScenarioMapper.Map((from p in context.Scenario select p).ToList());
         }
+
+        //Get by id
+        public ScenarioBusiness Get(int id)
+        {
+            var result = ScenarioMapper.Map((from p in context.Scenario where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.ScenarioType); //Test Console
+            return result;
+        }
+     
     }
 
 }
