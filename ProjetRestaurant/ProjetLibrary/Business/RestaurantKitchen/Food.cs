@@ -1,10 +1,12 @@
 using System;
 namespace ProjectLibrary.Business.RestaurantKitchen
 {
-    public abstract class Food
+    public class Food
     {
-        public int PreparationTime;
+        public int PreparationTime = 10000; // En millisec SVP
         public decimal price;
-        public bool FoodStatus;
+        public bool FoodCookStatus;
+        public enum FoodType {entry, dish, dessert};
+        public FoodType foodType;
     }
 }

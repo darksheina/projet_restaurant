@@ -1,26 +1,49 @@
-﻿using System;
+﻿using ProjetLibrary.Business.RestaurantDinerRoom;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ProjectLibrary.Business.RestaurantKitchen
 {
-   public class AssistantCook
+    public class AssistantCook : Person
     {
-        private readonly object assistantCookLock = new object();
-
-        public Food PutFoodOnCounter()
-        {
-            lock (assistantCookLock)
-            {
-                // TODO : prendre le plat et le mettre dans la zone
-                throw new System.Exception("Not implemented");
-            }
-            
+        public List<Food> FooDReady;
+        public AssistantCook()
+        {   //A modifier
+            this.Name = "assistantCook";
+            this.PersonIsBusy = false;
         }
 
-        public Food MakeFood()
+        public List<Food> MakeFood(List<Food> customerOrders, string task)
         {
-            throw new System.Exception("Not implemented");
+            foreach (Food food in customerOrders) // TO DO some Tests 
+            {
+                if (food.FoodCookStatus == false && task == "entry" && food.foodType == Food.FoodType.entry)
+                {
+                    this.PersonIsBusy = true;
+                    Thread.Sleep(food.PreparationTime);
+                    food.FoodCookStatus = true;
+                    this.FooDReady.Add(food);
+                    customerOrders.Remove(food);
+                }
+                else if (food.FoodCookStatus == false && task == "dish" && food.foodType == Food.FoodType.dish)
+                {
+                    this.PersonIsBusy = true;
+                    Thread.Sleep(food.PreparationTime);
+                    food.FoodCookStatus = true;
+                    this.FooDReady.Add(food);
+                    customerOrders.Remove(food);
+                }
+                else if (food.FoodCookStatus == false && task == "dessert" && food.foodType == Food.FoodType.dessert)
+                {
+                    this.PersonIsBusy = true;
+                    Thread.Sleep(food.PreparationTime);
+                    food.FoodCookStatus = true;
+                    this.FooDReady.Add(food);
+                    customerOrders.Remove(food);
+                }
+            }
         }
     }
 }

@@ -1,15 +1,21 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
     public class Waiter : Person
     {
         private int plateNumberMax = 5;
         public List<ProjectLibrary.Business.RestaurantKitchen.Food> currentGroupOrder = new List<ProjectLibrary.Business.RestaurantKitchen.Food>();
-        public PersonStatus waiterStatus = PersonStatus.free;
+        public bool PersonIsBusy;
         public int CurrentTableIDOrder;
         public int CurrentTableID;
+        public Waiter()
+        {//A MODIFIER
+            this.Name = "waiter";
+            this.PersonIsBusy = false;
+        }
         public int GetCurrentTableID()
         {
             return this.CurrentTableID;

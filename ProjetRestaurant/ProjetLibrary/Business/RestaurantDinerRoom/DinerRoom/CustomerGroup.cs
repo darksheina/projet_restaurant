@@ -13,22 +13,21 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         public EatStategy EatStrategy;
 
         public CustomerGroup() { }
-        public CustomerGroup(int groupNumber, int iDTable, int groupID)
+        public CustomerGroup(int groupNumber, int iDTable)
         {
             this.GroupNumber = groupNumber;
             this.IDTable = iDTable;
-            this.GroupID = groupID;
         }
         public void CallWaiter(List<Waiter> waiterList)
         {
             Waiter activeWaiter = null;
             for (int i = 0; i < waiterList.Count; i++)
             {
-                if (waiterList[i].waiterStatus == PersonStatus.free) //Check la liste des Waiter pour call celui dispo
+                if (waiterList[i].PersonIsBusy == false) //Check la liste des Waiter pour call celui dispo
                 {
                     activeWaiter = waiterList[i];
                     activeWaiter.SetCurrentTableID(this.IDTable);
-                    activeWaiter.waiterStatus = PersonStatus.busy;
+                    activeWaiter.PersonIsBusy = true;
                     Console.WriteLine("SUCCESS : Waiter CALLED");
                     break;
                 }

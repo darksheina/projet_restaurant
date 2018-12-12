@@ -3,8 +3,12 @@ using System.Collections.Generic;
 
 namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
-	public class Buttler {
-		
+	public class Buttler : Person {
+        public Buttler()
+        {//A modifer
+            this.Name = "buttler";
+            this.PersonIsBusy = false;
+        }
         public List<Table.TableStatus> GetTableStatus(List<Table.TableStatus> tableList)
         {
             List<Table.TableStatus> statusAllTable = null;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom {
-	public class Assistant {
+	public class Assistant : Person {
 		private int plateNumberMax = 5;
 
 		public void GetPlateOnCounter(int plateNumberMax) {

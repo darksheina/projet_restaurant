@@ -1,32 +1,49 @@
-﻿using System;
+﻿using ProjetLibrary.Business.RestaurantDinerRoom;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace ProjectLibrary.Business.RestaurantKitchen
 {
-    public class HeadChef 
+    public class HeadChef : Person
     {
         public int TableIdOrder;
         public List<Food> GroupOrder;
-        public List<string> TaskList;
-        /*public void GetAnOrder(Waiter waiter)
-        {
-            this.TableIdOrder = waiter.CurrentTableIDOrder;
-            foreach (Kitchen.Food food in waiter.currentGroupOrder)
-            {
-                this.groupOrder.Add(food);
-            }
-        }*/
+        public string TaskEntry = "entry";
+        public string TaskDish = "dish";
+        public string TaskDessert = "dessert";
+        public HeadChef()
+        {   //A modifier
+            this.Name = "headChef";
+            this.PersonIsBusy = false;
+        }
+        public void GetAnOrder()
+        {   //Ecoute du socket
+            throw new System.Exception("Not implemented");
+        }
 
-        public void GiveTask(List<Food> groupOrder)
+        public void GiveTask(List<Food> groupOrder, Chef chef, AssistantCook assistantCook )
         {
-            foreach (Food food in groupOrder)
-            {
-               /* if (food == Dish)
+           foreach(Food food in groupOrder)
+           {
+                if (food.foodType == Food.FoodType.entry)
                 {
-                    
-                }*/
-            }
+
+                }
+           }
+           if(chef.PersonIsBusy == false)
+           {
+                
+           }
+           else if(assistantCook.PersonIsBusy == false)
+           {
+
+           }
+           else
+           {
+                Thread.Sleep(5000);
+           };
         }
     }
 }
