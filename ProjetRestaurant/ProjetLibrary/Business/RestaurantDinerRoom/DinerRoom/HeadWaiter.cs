@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 
-namespace RestaurantDinerRoom.DinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
 	public class HeadWaiter {
 		public int SquareAssign;

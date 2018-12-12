@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 
-namespace RestaurantDinerRoom.DinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
     public class CustomerGroup : Person
     {
         public int GroupNumber;
-        public List<RestaurantKitchen.Kitchen.Food> GroupOrder = new List<RestaurantKitchen.Kitchen.Food>();
+        public List<ProjectLibrary.Business.RestaurantKitchen.Food> GroupOrder = new List<ProjectLibrary.Business.RestaurantKitchen.Food>();
         public int IDTable;
         public int GroupID;
         public EatStategy EatStrategy;
@@ -77,13 +77,13 @@ namespace RestaurantDinerRoom.DinerRoom
         {
             this.GroupID = groupID;
         }
-        public List<RestaurantKitchen.Kitchen.Food> GetGroupOrder()
+        public List<ProjectLibrary.Business.RestaurantKitchen.Food> GetGroupOrder()
         {
             return this.GroupOrder;
         }
-        public void SetGroupOrder(List<RestaurantKitchen.Kitchen.Food> groupOrder)
+        public void SetGroupOrder(List<ProjectLibrary.Business.RestaurantKitchen.Food> groupOrder)
         {
-            foreach(RestaurantKitchen.Kitchen.Food food in groupOrder){
+            foreach(ProjectLibrary.Business.RestaurantKitchen.Food food in groupOrder){
                 this.GroupOrder.Add(food);
             }
         }

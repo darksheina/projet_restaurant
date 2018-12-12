@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RestaurantDinerRoom.DinerRoom {
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom {
 	public class Assistant {
 		private int plateNumberMax = 5;
 
@@ -17,7 +17,7 @@ namespace RestaurantDinerRoom.DinerRoom {
 		public void CleanTable(int iDTable, Table.TableStatus status) {
 			throw new System.Exception("Not implemented");
 		}
-    public void GiveOrders(CustomerGroup customerGroup, int iDTable, List<RestaurantKitchen.Kitchen.Food> groupOrders) {
+    public void GiveOrders(CustomerGroup customerGroup, int iDTable, List<ProjectLibrary.Business.RestaurantKitchen.Food> groupOrders) {
         throw new System.Exception("Not implemented");
     }
 

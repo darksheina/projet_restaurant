@@ -1,7 +1,7 @@
-using RestaurantDinerRoom.DinerRoom;
+using ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom;
 using System;
 
-namespace RestaurantDinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom
 {
     public class Table
     {

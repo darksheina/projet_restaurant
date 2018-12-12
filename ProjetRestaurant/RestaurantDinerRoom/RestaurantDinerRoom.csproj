@@ -213,27 +213,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DinerRoom\Assistant.cs" />
-    <Compile Include="DinerRoom\Buttler.cs" />
-    <Compile Include="DinerRoom\CustomerGroup.cs" />
-    <Compile Include="DinerRoom\EatNormal.cs" />
-    <Compile Include="DinerRoom\EatQuickly.cs" />
-    <Compile Include="DinerRoom\EatSlowly.cs" />
-    <Compile Include="DinerRoom\EatStategy.cs" />
-    <Compile Include="DinerRoom\HeadWaiter.cs" />
-    <Compile Include="DinerRoom\Waiter.cs" />
-    <Compile Include="Person.cs" />
-    <Compile Include="PersonFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenario.cs" />
-    <Compile Include="Table.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProjetLibrary\ProjetLibrary.csproj">
+      <Project>{23ed46cd-0c01-4ea2-a70d-24d228e27c5b}</Project>
+      <Name>ProjetLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RestaurantKitchen\RestaurantKitchen.csproj">
       <Project>{0ad90d93-9feb-4e9f-bdd4-95e769992135}</Project>
       <Name>RestaurantKitchen</Name>

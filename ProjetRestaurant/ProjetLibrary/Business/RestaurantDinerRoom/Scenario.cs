@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantDinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom
 {
     public class Scenario
     {
@@ -23,7 +23,7 @@ namespace RestaurantDinerRoom
 
         private Person person;
         private Table table;
-        private RestaurantKitchen.Kitchen.Food food;
+        private ProjectLibrary.Business.RestaurantKitchen.Food food;
 
 
     }

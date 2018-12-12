@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace RestaurantDinerRoom.DinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
     public class Waiter : Person
     {
         private int plateNumberMax = 5;
-        public List<RestaurantKitchen.Kitchen.Food> currentGroupOrder = new List<RestaurantKitchen.Kitchen.Food>();
+        public List<ProjectLibrary.Business.RestaurantKitchen.Food> currentGroupOrder = new List<ProjectLibrary.Business.RestaurantKitchen.Food>();
         public PersonStatus waiterStatus = PersonStatus.free;
         public int CurrentTableIDOrder;
         public int CurrentTableID;

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestaurantKitchen.Kitchen
+namespace ProjectLibrary.Business.RestaurantKitchen
 {
     public class Chef
     {
         public Food MakeFood()
         {
+            throw new NotImplementedException();
            // Entry.
         }
 

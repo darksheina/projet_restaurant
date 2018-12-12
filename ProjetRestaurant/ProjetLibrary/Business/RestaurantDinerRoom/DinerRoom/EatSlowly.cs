@@ -1,7 +1,7 @@
 using System;
-namespace RestaurantDinerRoom.DinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 {
-	public class EatNormal {
+	public class EatSlowly {
 		public void Eat() {
 			throw new System.Exception("Not implemented");
 		}

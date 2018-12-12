@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantDinerRoom.DinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom 
 {
 	public interface EatStategy {
 		void Eat();

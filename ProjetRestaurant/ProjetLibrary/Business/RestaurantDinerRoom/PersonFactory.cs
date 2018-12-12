@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantDinerRoom
+namespace ProjetLibrary.Business.RestaurantDinerRoom
 {
     public abstract class PersonFactory
     {
@@ -23,15 +23,15 @@ namespace RestaurantDinerRoom
         {
             throw new System.Exception("Not implemented");
         }
-        public static RestaurantKitchen.Kitchen.HeadChef CreateHeadChef()
+        public static ProjectLibrary.Business.RestaurantKitchen.HeadChef CreateHeadChef()
         {
             throw new System.Exception("Not implemented");
         }
-        public static RestaurantKitchen.Kitchen.Chef CreateChef()
+        public static ProjectLibrary.Business.RestaurantKitchen.Chef CreateChef()
         {
             throw new System.Exception("Not implemented");
         }
-        public static RestaurantKitchen.Kitchen.AssistantCook CreateAssitantCook()
+        public static ProjectLibrary.Business.RestaurantKitchen.AssistantCook CreateAssitantCook()
         {
             throw new System.Exception("Not implemented");
         }

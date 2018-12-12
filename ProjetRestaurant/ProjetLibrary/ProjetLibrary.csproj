@@ -49,6 +49,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ActionBusiness.cs" />
+    <Compile Include="Business\RestaurantKitchen\AssistantCook.cs" />
+    <Compile Include="Business\RestaurantKitchen\Chef.cs" />
+    <Compile Include="Business\RestaurantKitchen\Dessert.cs" />
+    <Compile Include="Business\RestaurantKitchen\Dish.cs" />
+    <Compile Include="Business\RestaurantKitchen\Entry.cs" />
+    <Compile Include="Business\RestaurantKitchen\Food.cs" />
+    <Compile Include="Business\RestaurantKitchen\HeadChef.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\Assistant.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\Buttler.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\CustomerGroup.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\EatNormal.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\EatQuickly.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\EatSlowly.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\EatStategy.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\HeadWaiter.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\DinerRoom\Waiter.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\Person.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\PersonFactory.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\Scenario.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\Table.cs" />
     <Compile Include="Business\RoleActionBusiness.cs" />
     <Compile Include="Business\RoleBusiness.cs" />
     <Compile Include="Business\ScenarioBusiness.cs" />

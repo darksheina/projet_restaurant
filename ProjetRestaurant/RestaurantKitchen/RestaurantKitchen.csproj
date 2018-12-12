@@ -126,19 +126,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Kitchen\AssistantCook.cs" />
-    <Compile Include="Kitchen\Chef.cs" />
-    <Compile Include="Kitchen\Dessert.cs" />
-    <Compile Include="Kitchen\Dish.cs" />
-    <Compile Include="Kitchen\Entry.cs" />
-    <Compile Include="Kitchen\Food.cs" />
-    <Compile Include="Kitchen\HeadChef.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetLibrary\ProjetLibrary.csproj">
+      <Project>{23ed46cd-0c01-4ea2-a70d-24d228e27c5b}</Project>
+      <Name>ProjetLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

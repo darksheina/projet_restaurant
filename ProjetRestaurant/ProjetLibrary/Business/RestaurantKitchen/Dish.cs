@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantKitchen.Kitchen
+namespace ProjectLibrary.Business.RestaurantKitchen
 {
 	public class Dish : Food  {
 		public int PreparationTime;
