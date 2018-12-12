@@ -5,16 +5,6 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 namespace RestaurationModel.DinerRoom
 {
 	public class Buttler {
-<<<<<<< HEAD
-	//	public void GetTableStatus(list<Model.Salle de restauration.Table> tableList) {
-	//		throw new System.Exception("Not implemented");
-	//	}
-		public void GetCustomerGroupNumber() {
-			throw new System.Exception("Not implemented");
-		}
-		public void TableAttribution(int groupID, int iDTable) {
-			throw new System.Exception("Not implemented");
-=======
 		
         public List<Table.TableStatus> GetTableStatus(List<Table.TableStatus> tableList)
         {
@@ -43,7 +33,6 @@ namespace RestaurationModel.DinerRoom
             {
                 Console.WriteLine("Autre table requise");
             }
->>>>>>> refs/remotes/origin/Alexis'BranchRenouveau
 		}
 
 		public void CallHeadWaiter() {
