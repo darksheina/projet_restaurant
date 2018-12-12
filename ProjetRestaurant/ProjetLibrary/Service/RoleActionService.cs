@@ -1,12 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using RestaurantDinerRoom.DALandBLL.Business;
-using RestaurantDinerRoom.DALandBLL.Mapper;
-using RestaurationModel.DALandBLL.Persistance;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ProjectLibrary.Business;
+using ProjectLibrary.Mapper;
+using ProjectLibrary.Persistance;
 
-namespace RestaurantDinerRoom.DALandBLL.Service
+namespace ProjectLibrary.Service
 {
     class RefersToService
     {

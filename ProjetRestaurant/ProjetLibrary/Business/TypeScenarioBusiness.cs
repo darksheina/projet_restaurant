@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantDinerRoom.DALandBLL.Business
+namespace ProjectLibrary.Business
 {
 	public class TypeScenarioBusiness
     {

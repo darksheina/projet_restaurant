@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestaurantDinerRoom.DALandBLL.Business
+namespace ProjectLibrary.Business
 {
     class RoleActionBusiness
     {

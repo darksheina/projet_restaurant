@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RestaurantDinerRoom.DALandBLL.Persistance
+namespace ProjectLibrary.Persistance
 {
 	public class ScenarioDAO {
 		public int ID { get; set; }

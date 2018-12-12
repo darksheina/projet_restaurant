@@ -1,5 +1,5 @@
 using System;
-namespace RestaurantDinerRoom.DALandBLL.Business {
+namespace ProjectLibrary.Business {
 	public class ActionBusiness {
 		public int ID;
 		public string Entitled;

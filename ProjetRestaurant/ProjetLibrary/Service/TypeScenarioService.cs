@@ -1,11 +1,11 @@
-using RestaurantDinerRoom.DALandBLL.Business;
-using RestaurantDinerRoom.DALandBLL.Mapper;
-using RestaurationModel.DALandBLL.Persistance;
+using ProjectLibrary.Business;
+using ProjectLibrary.Mapper;
+using ProjectLibrary.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RestaurantDinerRoom.DALandBLL.Service
+namespace ProjectLibrary.Service
 {
     public class TypeScenarioService
     {
