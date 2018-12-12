@@ -1,21 +1,42 @@
+using RestaurationModel.DALandBLL.Business;
+using RestaurationModel.DALandBLL.Mapper;
+using RestaurationModel.DALandBLL.Persistance;
 using System;
 namespace RestaurationModel.DALandBLL.Service
 {
 	public class RoleService {
-		public void Add(Business.RoleBusiness profession) {
-			throw new System.Exception("Not implemented");
+        DatabaseContext context;
+
+        public RoleService()
+        {
+            context = new DatabaseContext();
+        }
+        public void Add(RoleBusiness role) {
+            var entity = RoleMapper.Map(role);
+            context.Role.Add(entity);
+            context.SaveChanges();
 		}
-		public void Delete(Business.RoleBusiness profession) {
-			throw new System.Exception("Not implemented");
+		public void Delete(RoleBusiness role) {
+            var entity = context.Role.Find(role.ID);
+            if (entity != null)
+            {
+                context.Role.Remove(entity);
+                context.SaveChanges();
+            }
 		}
 		public void Get(string name) {
-			throw new System.Exception("Not implemented");
+			//ToDo
 		}
-		public void Update(Business.RoleBusiness profession) {
-			throw new System.Exception("Not implemented");
+		public void Update(RoleBusiness role) {
+            var entity = context.Role.Find(role.ID);
+            if(entity != null)
+            {
+                entity.Entitled = role.Entitled;
+                context.SaveChanges();
+            }
 		}
 
-		private Persistance.DatabaseContext dbContext;
+		
 
 	}
 
