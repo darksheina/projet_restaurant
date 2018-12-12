@@ -1,5 +1,7 @@
-﻿using RestaurationModel.DinerRoom;
+﻿using RestaurationModel.DALandBLL.Business;
+using RestaurationModel.DALandBLL.Service;
 using System;
+using System.Collections.Generic;
 
 namespace RestaurantController
 {
@@ -7,42 +9,71 @@ namespace RestaurantController
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
 
-            CustomerGroup customer = new CustomerGroup();
-            customer.SetGroupNumber(); // TODO : action bdd
-            customer.GroupID = 1; // TODO : a changer pour que ça se génère
-
-            if (customer.GroupNumber <= 5) // TODO : useless, il faudra mettre le choix de la table à la place
+            string oui = "oui";
+            Console.WriteLine("Souhaitez-vous voir le contenu des tables : ");
+            string saisie = Console.ReadLine();
+            if (String.Compare(oui, saisie) == 0)
             {
-                Console.WriteLine("Les clients sont moins ou egale à 5"); // TODO : a enlever
-                customer.IDTable = 1;
+                RoleService roleservice;
+                roleservice = new RoleService();
+                List<RoleBusiness> plop2 = roleservice.Select();
+                foreach (var item in plop2)
+                {
+                    Console.WriteLine("Nom du rôle : " + item.Entitled);
+                }
+
+                ActionService actionservice;
+                actionservice = new ActionService();
+                List<ActionBusiness> plop3 = actionservice.Select();
+                foreach (var item in plop3)
+                {
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Nom de l'action : " + item.Entitled + "\nMethode à laquelle on fait reference :" + item.MethodRef);
+                }
+
+                TypeScenarioService typescenarioservice;
+                typescenarioservice = new TypeScenarioService();
+                List<TypeScenarioBusiness> plop4 = typescenarioservice.Select();
+                Console.WriteLine("\n");
+                foreach (var item in plop4)
+                {
+                    Console.WriteLine("Nom du type de Scénario : " + item.Entitled);
+                }
+                ScenarioService scenarioService;
+                scenarioService = new ScenarioService();
+                List<ScenarioBusiness> plop = scenarioService.Select();
+                Console.WriteLine("\n");
+                foreach (var item in plop)
+                {
+
+                    Console.WriteLine("Description : " + item.Description + "\nOrdre d'execution : " + item.OrderStage + "\nLe type de scenario :" + item.ScenarioType.Entitled + "Action" + item.Action.Entitled);
+                }
+                Console.Read();
             }
-            else
+            else if (String.Compare(saisie, "ajout") == 0)
             {
-                Console.WriteLine("Les clients sont plus de 5"); // TODO : a enlever
-                customer.IDTable = 6;
+                RoleBusiness role;
+                role = new RoleBusiness();
+                Console.WriteLine("Quel role ajouter ? :");
+                string text = Console.ReadLine();
+                role.Entitled = text;
+                RoleService roleservice;
+                roleservice = new RoleService();
+                roleservice.Add(role);
+                Console.WriteLine("Champ ajouter dans la BDD");
+                Console.Read();
+
             }
-
-            HeadWaiter headwaiter = new HeadWaiter();
-            headwaiter.ShowTableToCustomers(customer.IDTable, customer.GroupID);
-            headwaiter.GetMenu(customer.GroupNumber, customer.IDTable);
-            headwaiter.GiveMenu(customer.GroupNumber, customer.IDTable);
-            customer.ChooseOrder();
-
-            // TODO : le client passe commande
-            // TODO : Le headwaiter transmet la commande
-            headwaiter.GetBackMenu(customer.IDTable, customer.GroupID); // headWaiter ramène les cartes
-            // TODO : Le serveur amène les plats quand ils sont tous prêts
-            // TODO : Le client mange
-            // TODO : ...
-            // TODO : Le client s'en va
-            // TODO : Le client va payer
-            // TODO : Le client paye
-            // TODO : Le serveur débarasse la table
-            headwaiter.DressageTable(customer.IDTable); // headwaiter dresse la nouvelle table
-
-            Console.ReadLine();
+            else if (String.Compare(saisie, "get") == 0)
+            {
+                Console.WriteLine("Quel id chercher ? :");
+                string text = Console.ReadLine();
+                int num = Convert.ToInt32(text);
+                TypeScenarioService typeScenarioservice;
+                typeScenarioservice = new TypeScenarioService();
+                typeScenarioservice.Get(num);
+            };
 
         }
     }

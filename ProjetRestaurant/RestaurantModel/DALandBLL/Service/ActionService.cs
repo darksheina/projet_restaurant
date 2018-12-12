@@ -2,6 +2,9 @@ using RestaurationModel.DALandBLL.Business;
 using RestaurationModel.DALandBLL.Mapper;
 using RestaurationModel.DALandBLL.Persistance;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace RestaurationModel.DALandBLL.Service {
 	public class ActionService {
 
@@ -39,9 +42,13 @@ namespace RestaurationModel.DALandBLL.Service {
             }
 			
 		}
+        public List<ActionBusiness> Select()
+        {
+            return (from p in context.Action select ActionMapper.Map(p)).ToList();
+        }
 
-		
 
-	}
+
+    }
 
 }
