@@ -30,14 +30,10 @@ namespace RestaurantDinerRoom.DALandBLL.Service
                 context.SaveChanges();
             }
         }
-        public void Get(int id)
+        public TypeScenarioBusiness Get(int id)
         {
-            TypeScenarioBusiness scenarioBusiness;
-            scenarioBusiness = new TypeScenarioBusiness();
-            scenarioBusiness.ID = id;
-            var entity = context.TypeScenario.Find(scenarioBusiness.ID);
-            Console.WriteLine("ID :" + scenarioBusiness.ID + "Nom :" + scenarioBusiness.Entitled);
-            Console.Read();
+
+            return (from p in context.TypeScenario where p.ID == id select TypeScenarioMapper.Map(p)).FirstOrDefault();
         }
         public void Update(TypeScenarioBusiness scenarioType)
         {
