@@ -1,6 +1,6 @@
 ﻿using ProjectLibrary.Business;
 using ProjectLibrary.Mapper;
-using ProjectLibrary.Persistance;
+using ProjetLibrary.Persistance;
 
 namespace ProjectLibrary.Service
 {
@@ -16,19 +16,19 @@ namespace ProjectLibrary.Service
 
         public void Add(RoleActionBusiness refersTo)
         {
-            var entity = RoleActionMapper.Map(refersTo);
-            context.RefersTo.Add(entity);
+            //var entity = RoleActionMapper.Map(refersTo);
+           // context.Action.Add(entity);
             context.SaveChanges();
         }
 
         public void Delete(RoleActionBusiness refersTo)
         {
-            var entity = context.RefersTo.Find(refersTo.Action, refersTo.Role);
+            /*var entity = context.RefersTo.Find(refersTo.Action, refersTo.Role);
             if (entity != null)
             {
                 context.RefersTo.Remove(entity);
                 context.SaveChanges();
-            }
+            }*/
         }
 
        /* public void Update(RefersToBusiness refersTo)

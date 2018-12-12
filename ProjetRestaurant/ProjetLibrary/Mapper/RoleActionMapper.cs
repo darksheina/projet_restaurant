@@ -1,5 +1,4 @@
 ﻿using ProjectLibrary.Business;
-using ProjectLibrary.Persistance;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace ProjectLibrary.Mapper
     class RoleActionMapper
     {
         //Tranform a RefersToBusiness
-        public static RoleActionBusiness Map(RoleActionDAO refersto)
+        /*public static RoleActionBusiness Map(ProjetLibrary.Persistance. refersto)
         {
             return new RoleActionBusiness
             {
@@ -29,6 +28,6 @@ namespace ProjectLibrary.Mapper
         public static List<RoleActionBusiness> Map(List<RoleActionDAO> referstos)
         {
             return (from v in referstos select Map(v)).ToList();
-        }
+        }*/
     }
 }

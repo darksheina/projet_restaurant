@@ -1,6 +1,5 @@
 
 using ProjectLibrary.Business;
-using ProjectLibrary.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ namespace ProjectLibrary.Mapper
 {
 	public class RoleMapper {
        
-            public static RoleBusiness Map(Persistance.RoleDAO role)
+            public static RoleBusiness Map(ProjetLibrary.Persistance.Role role)
             {
                 return new RoleBusiness
                 {
@@ -17,15 +16,15 @@ namespace ProjectLibrary.Mapper
                     Entitled = role.Entitled,
                 };
             }
-            public static RoleDAO Map(Business.RoleBusiness role)
+            public static ProjetLibrary.Persistance.Role Map(Business.RoleBusiness role)
             {
-                return new RoleDAO
+                return new ProjetLibrary.Persistance.Role
                 {
                     ID = role.ID,
                     Entitled = role.Entitled,
                 };
             }
-            public static List<RoleBusiness> Map(List<RoleDAO> roles)
+            public static List<RoleBusiness> Map(List<ProjetLibrary.Persistance.Role> roles)
             {
                 return (from v in roles select Map(v)).ToList();
             }

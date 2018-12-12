@@ -1,6 +1,7 @@
 using ProjectLibrary.Business;
 using ProjectLibrary.Mapper;
-using ProjectLibrary.Persistance;
+using ProjetLibrary.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -44,7 +45,8 @@ namespace ProjectLibrary.Service
 		}
         public List<ActionBusiness> Select()
         {
-            return (from p in context.Action select ActionMapper.Map(p)).ToList();
+            throw new NotImplementedException();
+            //return (from p in context.Action select ActionMapper.Map(p)).ToList();
         }
 
 

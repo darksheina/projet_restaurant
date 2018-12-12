@@ -1,16 +1,13 @@
 using ProjectLibrary.Business;
-using ProjectLibrary.Persistance;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ProjectLibrary.Mapper
 {
     public class ActionMapper
     {
         //Tranform a ActionDAO object into a ActionBusiness object
-        public static ActionBusiness Map(ActionDAO action)
+        public static ActionBusiness Map(ProjetLibrary.Persistance.Action action)
         {
             return new ActionBusiness
             {
@@ -20,10 +17,10 @@ namespace ProjectLibrary.Mapper
             };
         }
         //Tranform a ActionBusiness object into a ActionDAO object
-        public static ActionDAO Map(ActionBusiness action)
+        public static ProjetLibrary.Persistance.Action Map(ActionBusiness action)
         {
 
-            return new ActionDAO
+            return new ProjetLibrary.Persistance.Action
             {
                 ID = action.ID,
                 Entitled = action.Entitled,
@@ -33,7 +30,7 @@ namespace ProjectLibrary.Mapper
 
         }
         //Tranform a list of ActionDAO object into a list of ActionBusiness object
-        public static List<ActionBusiness> Map(List<ActionDAO> action)
+        public static List<ActionBusiness> Map(List<ProjetLibrary.Persistance.Action> action)
         {
             return (from v in action select Map(v)).ToList();
 

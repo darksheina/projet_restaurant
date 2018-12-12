@@ -1,6 +1,7 @@
 using ProjectLibrary.Business;
 using ProjectLibrary.Mapper;
-using ProjectLibrary.Persistance;
+using ProjetLibrary.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,7 +40,7 @@ namespace RestaurantDinerRoom.DALandBLL.Service
 		}
         public List<RoleBusiness> Select()
         {
-            return (from p in context.Role select RoleMapper.Map(p)).ToList();
+            return RoleMapper.Map((from p in context.Role select p).ToList());
         }
 
     }

@@ -1,6 +1,5 @@
 
 using ProjectLibrary.Business;
-using ProjectLibrary.Persistance;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,7 +7,7 @@ namespace ProjectLibrary.Mapper
 {
     public class TypeScenarioMapper
     {
-        public static TypeScenarioBusiness Map(TypeScenarioDAO scenarioType)
+        public static TypeScenarioBusiness Map(ProjetLibrary.Persistance.TypeScenario scenarioType)
         {
             return new TypeScenarioBusiness
             {
@@ -16,16 +15,16 @@ namespace ProjectLibrary.Mapper
                 Entitled = scenarioType.Entitled,
             };
         }
-        public static TypeScenarioDAO Map(TypeScenarioBusiness scenarioType)
+        public static ProjetLibrary.Persistance.TypeScenario Map(TypeScenarioBusiness scenarioType)
         {
-            return new TypeScenarioDAO
+            return new ProjetLibrary.Persistance.TypeScenario
             {
                 ID = scenarioType.ID,
                 Entitled = scenarioType.Entitled,
             };
         }
 
-        public static List<TypeScenarioBusiness> Map(List<TypeScenarioDAO> scenarioTypes)
+        public static List<TypeScenarioBusiness> Map(List<ProjetLibrary.Persistance.TypeScenario> scenarioTypes)
         {
             return (from v in scenarioTypes select Map(v)).ToList();
 

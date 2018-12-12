@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RestaurantModelContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Entitled" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MethodRef" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Entitled" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleAction">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_action" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_action" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Scenario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="OrderStage" Type="int" Nullable="false" />
+          <Property Name="ID_type_scenario" Type="int" />
+          <Property Name="ID_action" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeScenario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Entitled" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_refers_to_ID">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="RoleAction" Type="Self.RoleAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RoleAction">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_refers_to_ID_action">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="RoleAction" Type="Self.RoleAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RoleAction">
+              <PropertyRef Name="ID_action" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scenario_ID_action">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Scenario" Type="Self.Scenario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Scenario">
+              <PropertyRef Name="ID_action" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scenario_ID_type_scenario">
+          <End Role="TypeScenario" Type="Self.TypeScenario" Multiplicity="0..1" />
+          <End Role="Scenario" Type="Self.Scenario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeScenario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Scenario">
+              <PropertyRef Name="ID_type_scenario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RestaurantModelContextStoreContainer">
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleAction" EntityType="Self.RoleAction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scenario" EntityType="Self.Scenario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeScenario" EntityType="Self.TypeScenario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_refers_to_ID" Association="Self.FK_refers_to_ID">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RoleAction" EntitySet="RoleAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_refers_to_ID_action" Association="Self.FK_refers_to_ID_action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="RoleAction" EntitySet="RoleAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scenario_ID_action" Association="Self.FK_scenario_ID_action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Scenario" EntitySet="Scenario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scenario_ID_type_scenario" Association="Self.FK_scenario_ID_type_scenario">
+            <End Role="TypeScenario" EntitySet="TypeScenario" />
+            <End Role="Scenario" EntitySet="Scenario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RestaurantModelContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entitled" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MethodRef" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Scenario" Relationship="Self.FK_scenario_ID_action" FromRole="Action" ToRole="Scenario" />
+          <NavigationProperty Name="Role" Relationship="Self.RoleAction" FromRole="Action" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entitled" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Action" Relationship="Self.RoleAction" FromRole="Role" ToRole="Action" />
+        </EntityType>
+        <EntityType Name="Scenario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrderStage" Type="Int32" Nullable="false" />
+          <Property Name="ID_type_scenario" Type="Int32" />
+          <Property Name="ID_action" Type="Int32" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_scenario_ID_action" FromRole="Scenario" ToRole="Action" />
+          <NavigationProperty Name="TypeScenario" Relationship="Self.FK_scenario_ID_type_scenario" FromRole="Scenario" ToRole="TypeScenario" />
+        </EntityType>
+        <EntityType Name="TypeScenario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entitled" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Scenario" Relationship="Self.FK_scenario_ID_type_scenario" FromRole="TypeScenario" ToRole="Scenario" />
+        </EntityType>
+        <Association Name="FK_scenario_ID_action">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Scenario" Type="Self.Scenario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Scenario">
+              <PropertyRef Name="ID_action" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scenario_ID_type_scenario">
+          <End Role="TypeScenario" Type="Self.TypeScenario" Multiplicity="0..1" />
+          <End Role="Scenario" Type="Self.Scenario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeScenario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Scenario">
+              <PropertyRef Name="ID_type_scenario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleAction">
+          <End Role="Role" Type="Self.Role" Multiplicity="*" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DatabaseContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Action" EntityType="Self.Action" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Scenario" EntityType="Self.Scenario" />
+          <EntitySet Name="TypeScenario" EntityType="Self.TypeScenario" />
+          <AssociationSet Name="FK_scenario_ID_action" Association="Self.FK_scenario_ID_action">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Scenario" EntitySet="Scenario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scenario_ID_type_scenario" Association="Self.FK_scenario_ID_type_scenario">
+            <End Role="TypeScenario" EntitySet="TypeScenario" />
+            <End Role="Scenario" EntitySet="Scenario" />
+          </AssociationSet>
+          <AssociationSet Name="RoleAction" Association="Self.RoleAction">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RestaurantModelContextStoreContainer" CdmEntityContainer="DatabaseContext">
+          <EntitySetMapping Name="Action">
+            <EntityTypeMapping TypeName="RestaurantModelContext.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Entitled" ColumnName="Entitled" />
+                <ScalarProperty Name="MethodRef" ColumnName="MethodRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="RestaurantModelContext.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Entitled" ColumnName="Entitled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scenario">
+            <EntityTypeMapping TypeName="RestaurantModelContext.Scenario">
+              <MappingFragment StoreEntitySet="Scenario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="OrderStage" ColumnName="OrderStage" />
+                <ScalarProperty Name="ID_type_scenario" ColumnName="ID_type_scenario" />
+                <ScalarProperty Name="ID_action" ColumnName="ID_action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeScenario">
+            <EntityTypeMapping TypeName="RestaurantModelContext.TypeScenario">
+              <MappingFragment StoreEntitySet="TypeScenario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Entitled" ColumnName="Entitled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="RoleAction" TypeName="RestaurantModelContext.RoleAction" StoreEntitySet="RoleAction">
+            <EndProperty Name="Role">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <EndProperty Name="Action">
+              <ScalarProperty Name="ID" ColumnName="ID_action" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
