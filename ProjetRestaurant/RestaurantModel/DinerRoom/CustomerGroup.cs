@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RestaurationModel.DinerRoom
 {
-	public class CustomerGroup {
+	public class CustomerGroup : Person{
 		public int GroupNumber;
 		public List<Kitchen.Food> GroupOrder;
 		public int IDTable;

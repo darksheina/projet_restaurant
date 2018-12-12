@@ -5,23 +5,34 @@ namespace RestaurationModel
 {
     public class Table
     {
-        private int iDTable;
-        private int seatNumber;
+        public int IDTable;
+        public int seatNumber;
         public enum TableStatus { taken, free, dirty, book };
-        private TableStatus status = TableStatus.free;
-        private DinerRoom.CustomerGroup custumerGroup;
-        private int rank;
-        private int square;
-        public Table(ref int seatNumber, ref int iDTable, ref int x, ref int y)
+        public TableStatus status = TableStatus.free;
+        public CustomerGroup custumerGroup;
+        public int rank;
+        public int square;
+
+        public Table(int seatNumber, int iDTable, int rank, int square)
         {
-            throw new System.Exception("Not implemented");
+            this.SeatNumber = seatNumber;
+            this.IDTable = iDTable;
+            this.Rank = rank;
+            this.Square = square;
         }
 
-        public int IDTable { get => iDTable; set => iDTable = value; }
-        public int SeatNumber { get => seatNumber; set => seatNumber = value; }
-        public TableStatus Status { get => status; set => status = value; }
-        public CustomerGroup CustumerGroup { get => custumerGroup; set => custumerGroup = value; }
-        public int Rank { get => rank; set => rank = value; }
-        public int Square { get => square; set => square = value; }
+        public int GetIDTable()
+        {
+            return this.IDTable;
+        }
+        public void SetIDTable(int iDTable)
+        {
+            this.IDTable = iDTable;
+        }
+        public int SeatNumber { get { return seatNumber; } set { seatNumber = value; } }
+        public TableStatus Status { get { return status; } set { status = value; } }
+        public CustomerGroup CustumerGroup { get { return custumerGroup; } set { custumerGroup = value; } }
+        public int Rank { get { return rank; } set { rank = value; } }
+        public int Square { get { return square; } set { square = value; } }
     }
 }
