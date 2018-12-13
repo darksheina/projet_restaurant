@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ActionBusiness.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\Test.cs" />
     <Compile Include="Business\RestaurantKitchen\AssistantCook.cs" />
     <Compile Include="Business\RestaurantKitchen\Chef.cs" />
     <Compile Include="Business\RestaurantKitchen\Dessert.cs" />

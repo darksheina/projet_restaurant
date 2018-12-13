@@ -47,10 +47,15 @@ namespace ProjectLibrary.Service
         public ScenarioBusiness Get(int id)
         {
             var result = ScenarioMapper.Map((from p in context.Scenario where p.ID == id select p).FirstOrDefault());
-            Console.WriteLine("Result = {0}", result.ScenarioType); //Test Console
             return result;
         }
-     
+
+        public List<ScenarioBusiness> GetScenarioLines(int id)
+        {
+            Console.WriteLine("je suis dans getScenarioLines()");
+            return ScenarioMapper.Map((from p in context.Scenario where p.ID_type_scenario == id select p ).ToList());
+        }
+
     }
 
 }

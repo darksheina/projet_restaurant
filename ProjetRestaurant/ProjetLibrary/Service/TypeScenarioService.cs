@@ -42,7 +42,6 @@ namespace ProjectLibrary.Service
         public TypeScenarioBusiness Get(string name)
         {
             var result = TypeScenarioMapper.Map((from p in context.TypeScenario where p.Entitled == name select p).FirstOrDefault());
-            Console.WriteLine("id = {0}", result.ID); //Test Console
             return result;
         }
         public void Update(TypeScenarioBusiness scenarioType)
