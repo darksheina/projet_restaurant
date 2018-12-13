@@ -24,20 +24,25 @@ namespace RestaurationView
         public MainWindow()
         {
             InitializeComponent();
-            List<HeadWaiter> roleBuisinesses = new List<HeadWaiter>();
-            HeadWaiter headwait = new HeadWaiter();
-            headwait.RankAssign = 2;
-            headwait.SquareAssign = 4;
-            headwait.isBusy = true;
-            HeadWaiter headwait2 = new HeadWaiter();
-            headwait2.RankAssign = 4;
-            headwait2.SquareAssign = 2;
-            headwait2.isBusy = false;
 
+            List<CustomerGroup> listGr = new List<CustomerGroup>
+            {
+                new CustomerGroup { Name = "group1", GroupNumber = 1, IDTable = 5 },
+                new CustomerGroup { Name= "group2", GroupNumber = 2, IDTable =5}
+            };
 
-            roleBuisinesses.Add(headwait);
-            roleBuisinesses.Add(headwait2);
-            RestaurantActor.ItemsSource = roleBuisinesses;
+            
+             
+            
+
+            
+        }
+
+        private void Play_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 win2 = new Window2();
+            win2.Show();
+
         }
     }
 }
