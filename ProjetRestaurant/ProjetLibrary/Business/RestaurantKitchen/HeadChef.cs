@@ -10,6 +10,7 @@ namespace ProjectLibrary.Business.RestaurantKitchen
     {
         public int TableIdOrder;
         public List<Food> GroupOrder;
+        public List<Food> FooDReady = new List<Food>();
         public string TaskEntry = "entry";
         public string TaskDish = "dish";
         public string TaskDessert = "dessert";
@@ -23,27 +24,72 @@ namespace ProjectLibrary.Business.RestaurantKitchen
             throw new System.Exception("Not implemented");
         }
 
-        public void GiveTask(List<Food> groupOrder, Chef chef, AssistantCook assistantCook )
+        public void GiveTask(List<Food> groupOrder, Chef chef, AssistantCook assistantCook)
         {
-           foreach(Food food in groupOrder)
-           {
+            foreach (Food food in groupOrder)
+            {
                 if (food.foodType == Food.FoodType.entry)
                 {
+                    if (food.FoodCookStatus == false)
+                    {
+                        while (chef.PersonIsBusy != false && assistantCook.PersonIsBusy != false)
+                        {
+                            this.PersonIsBusy = true;
+                        }
+                        if (chef.PersonIsBusy == false)
+                        {
+                            this.FooDReady = chef.MakeFood(groupOrder, TaskEntry);
 
+                            this.PersonIsBusy = false;
+                        }
+                        else if (assistantCook.PersonIsBusy == false)
+                        {
+                            this.FooDReady = assistantCook.MakeFood(groupOrder, TaskEntry);
+                            this.PersonIsBusy = false;
+                        }
+                    }
                 }
-           }
-           if(chef.PersonIsBusy == false)
-           {
-                
-           }
-           else if(assistantCook.PersonIsBusy == false)
-           {
-
-           }
-           else
-           {
-                Thread.Sleep(5000);
-           };
+                if (food.foodType == Food.FoodType.dish)
+                {
+                    if (food.FoodCookStatus == false)
+                    {
+                        while (chef.PersonIsBusy != false && assistantCook.PersonIsBusy != false)
+                        {
+                            this.PersonIsBusy = true;
+                        }
+                        if (chef.PersonIsBusy == false)
+                        {
+                            this.FooDReady = chef.MakeFood(groupOrder, TaskDish);
+                            this.PersonIsBusy = false;
+                        }
+                        else if (assistantCook.PersonIsBusy == false)
+                        {
+                            this.FooDReady = assistantCook.MakeFood(groupOrder, TaskDish);
+                            this.PersonIsBusy = false;
+                        }
+                    }
+                }
+                if (food.foodType == Food.FoodType.dessert)
+                {
+                    if (food.FoodCookStatus == false)
+                    {
+                        while (chef.PersonIsBusy != false && assistantCook.PersonIsBusy != false)
+                        {
+                            this.PersonIsBusy = true;
+                        }
+                        if (chef.PersonIsBusy == false)
+                        {
+                            this.FooDReady = chef.MakeFood(groupOrder, TaskDessert);
+                            this.PersonIsBusy = false;
+                        }
+                        else if (assistantCook.PersonIsBusy == false)
+                        {
+                            this.FooDReady = assistantCook.MakeFood(groupOrder, TaskDessert);
+                            this.PersonIsBusy = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }

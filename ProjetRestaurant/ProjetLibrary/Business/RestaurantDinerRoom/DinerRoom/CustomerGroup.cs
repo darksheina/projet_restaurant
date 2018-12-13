@@ -10,11 +10,17 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         public List<ProjectLibrary.Business.RestaurantKitchen.Food> GroupOrder = new List<ProjectLibrary.Business.RestaurantKitchen.Food>();
         public int IDTable;
         public int GroupID;
-        public EatStategy EatStrategy;
+        public EatStategy EatStrategyContext;
 
-        public CustomerGroup() { }
+        public CustomerGroup()
+        {
+            this.Name = "CustomerGroup";
+            this.PersonIsBusy = false;
+        }
         public CustomerGroup(int groupNumber, int iDTable)
         {
+            this.Name = "CustomerGroup";
+            this.PersonIsBusy = false;
             this.GroupNumber = groupNumber;
             this.IDTable = iDTable;
         }
@@ -55,10 +61,10 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         }
         public void SetGroupNumber()
         {
-             Random rnd = new Random();
-             int groupNumber = rnd.Next(1, 9);
-             Console.WriteLine(groupNumber);
-             this.GroupNumber = groupNumber;
+            Random rnd = new Random();
+            int groupNumber = rnd.Next(1, 9);
+            Console.WriteLine(groupNumber);
+            this.GroupNumber = groupNumber;
         }
         public int GetGroupID()
         {
@@ -82,19 +88,20 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         }
         public void SetGroupOrder(List<ProjectLibrary.Business.RestaurantKitchen.Food> groupOrder)
         {
-            foreach(ProjectLibrary.Business.RestaurantKitchen.Food food in groupOrder){
+            foreach (ProjectLibrary.Business.RestaurantKitchen.Food food in groupOrder)
+            {
                 this.GroupOrder.Add(food);
             }
         }
 
         public void ChooseOrder()
-         {
-             // TODO : modifier ?
-             // Le client choisi son plat, il met au moins 5 min
-             Console.WriteLine("CustomerGroup : Il nous faut au moins 5 min pour choisir nos plats !!"); // TODO : a enlever --> log
-             Thread.Sleep(5000); //wait 5sec for choose order
-             Console.WriteLine("CustomerGroup : Nous avons choisi nos plats !!"); // TODO : a enlever --> log
-         }
+        {
+            // TODO : PARA d'entrée ->  Food PARA = new Food(Food.FoodType.dish, 10);
+            // Le client choisi son plat, il met au moins 5 min
+            Console.WriteLine("CustomerGroup : Il nous faut au moins 5 min pour choisir nos plats !!"); // TODO : a enlever --> log
+            Thread.Sleep(5000); //wait 5sec for choose order
+            Console.WriteLine("CustomerGroup : Nous avons choisi nos plats !!"); // TODO : a enlever --> log
+        }
 
         private EatStategy eatStategy;
         private Person person;
