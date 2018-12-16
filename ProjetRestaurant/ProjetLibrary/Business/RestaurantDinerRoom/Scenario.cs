@@ -64,10 +64,11 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
             scenarioservice = new ScenarioService();
             List<ScenarioBusiness> lines = scenarioservice.GetScenarioLines(GetTypeScenario());
             Console.WriteLine("\n");
-            foreach (var item in lines.OrderBy(x => x.OrderStage))
+            lines.OrderBy(x => x.OrderStage);
+            /*foreach (var item in lines.OrderBy(x => x.OrderStage))
             {
                 Console.WriteLine("Description du Scenario : " + item.Description+ " \nAction : " + item.Action.MethodRef+ " \n Ordre :" +item.OrderStage + "\n Role :"+ item.Action.Role.Entitled);
-            }
+            }*/
             
             return lines;
         }
@@ -78,11 +79,11 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
             linesB = GetAllScenarioLines();
             foreach (var item in linesB)
             {
-                    Console.WriteLine("Methode à laquelle on fait réference : "+item.Action.MethodRef);
-                    Console.WriteLine("Utiliser par le role :" +item.Action.Role.Entitled);
+                    //Console.WriteLine("Methode à laquelle on fait réference : "+item.Action.MethodRef);
+                    //Console.WriteLine("Utiliser par le role :" +item.Action.Role.Entitled);
                     var test = item.Action.Role.Entitled;
                     switch (test) {
-                        case "CustomerGroup":
+                        case "CostumerGroup":
                             Type type = typeof(CustomerGroup);
                             MethodInfo method = type.GetMethod(item.Action.MethodRef);
                             CustomerGroup c = new CustomerGroup();
