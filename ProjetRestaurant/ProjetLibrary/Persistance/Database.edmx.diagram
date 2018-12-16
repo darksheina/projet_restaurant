@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="RestaurantModel.Action" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantModel.Scenario" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantModel.TypeScenario" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantModel.TypeScenario" Width="1.5" PointX="3.125" PointY="3.625" IsExpanded="true" />
         <AssociationConnector Association="RestaurantModel.FK_Action_Role" ManuallyRouted="false" />
         <AssociationConnector Association="RestaurantModel.FK_scenario_ID_action" ManuallyRouted="false" />
         <AssociationConnector Association="RestaurantModel.FK_scenario_ID_type_scenario" ManuallyRouted="false" />
