@@ -11,6 +11,7 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         public int CurrentTableIDOrder;
         public int CurrentTableID;
         public int GetCurrentTableID()
+
         {
             return this.CurrentTableID;
         }

@@ -5,9 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RestaurationView"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Restaurant Simulator" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="RestaurantActor" HorizontalAlignment="Left" Height="100" Margin="205,176,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="Setting" Click="Setting_Click" Content="Settings" HorizontalAlignment="Left" Margin="452,170,0,0" VerticalAlignment="Top" Width="162" Height="146"/>
+        <Button x:Name="Start" Click="Start_Click" Content="Start Simulation" HorizontalAlignment="Left" Margin="188,170,0,0" VerticalAlignment="Top" Width="162" Height="146"/>
+        <Label Content="Restaurant Simulator" HorizontalAlignment="Left" Margin="102,33,0,0" VerticalAlignment="Top" Height="132" Width="614" FontSize="72" FontFamily="Tw Cen MT Condensed Extra Bold"/>
+
+
+
 
     </Grid>
 </Window>

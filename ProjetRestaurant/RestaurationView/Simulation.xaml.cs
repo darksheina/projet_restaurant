@@ -10,32 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom;
 
 namespace RestaurationView
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Simulation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Simulation : Window
     {
-        public MainWindow()
+        public Simulation()
         {
             InitializeComponent();
         }
 
-        private void Setting_Click(object sender, RoutedEventArgs e)
+        private void Quit_Click(object sender, RoutedEventArgs e)
         {
-            Settings settings = new Settings();
-            settings.Show();
+            Close();
         }
 
-        private void Start_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Simulation simulation = new Simulation();
-            simulation.Show();
+
         }
     }
 }

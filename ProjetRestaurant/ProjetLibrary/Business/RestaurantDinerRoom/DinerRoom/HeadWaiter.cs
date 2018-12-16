@@ -6,7 +6,6 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
 	public class HeadWaiter {
 		public int SquareAssign;
 		public int RankAssign;
-        public bool isBusy;
 
 		public void DressageTable(int iDTable) {
             Console.WriteLine("HeadWaiter : Je dresse de nouveau la table " + iDTable); // TODO : a enlever --> log
