@@ -18,16 +18,15 @@ namespace ProjetLibrary.Persistance
         public Action()
         {
             this.Scenario = new HashSet<Scenario>();
-            this.Role = new HashSet<Role>();
         }
     
         public int ID { get; set; }
         public string Entitled { get; set; }
         public string MethodRef { get; set; }
+        public Nullable<int> ID_role { get; set; }
     
+        public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Scenario> Scenario { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Role> Role { get; set; }
     }
 }

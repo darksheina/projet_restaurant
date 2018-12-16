@@ -82,17 +82,17 @@
     <Compile Include="Mapper\ScenarioMapper.cs" />
     <Compile Include="Mapper\TypeScenarioMapper.cs" />
     <Compile Include="Persistance\Action.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
     </Compile>
-    <Compile Include="Persistance\Database.Context.cs">
+    <Compile Include="Persistance\DatabaseRestaurant.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.Context.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Persistance\Database.cs">
+    <Compile Include="Persistance\DatabaseRestaurant.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Database.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -100,13 +100,13 @@
       <DependentUpon>Database.edmx</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Role.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
     </Compile>
     <Compile Include="Persistance\Scenario.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
     </Compile>
     <Compile Include="Persistance\TypeScenario.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ActionService.cs" />
@@ -129,16 +129,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Persistance\Database.Context.tt">
+    <Content Include="Persistance\DatabaseRestaurant.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.Context.cs</LastGenOutput>
+      <LastGenOutput>DatabaseRestaurant.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Persistance\Database.tt">
+    <Content Include="Persistance\DatabaseRestaurant.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.cs</LastGenOutput>
+      <LastGenOutput>DatabaseRestaurant.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
