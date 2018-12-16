@@ -1,4 +1,4 @@
-namespace ProjectLibrary.Business
+namespace ProjetLibrary.Business
 {
     public class ScenarioBusiness {
 		public int ID { get; set; }

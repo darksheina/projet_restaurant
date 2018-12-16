@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using ProjectLibrary.Business;
-using ProjectLibrary.Mapper;
 using ProjetLibrary.Persistance;
+using ProjetLibrary.Business;
+using ProjetLibrary.Mapper;
 
-namespace ProjectLibrary.Service
+namespace ProjetLibrary.Service
 {
     public class ScenarioService {
         DatabaseContext context;

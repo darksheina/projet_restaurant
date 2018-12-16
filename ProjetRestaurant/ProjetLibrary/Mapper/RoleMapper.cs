@@ -1,10 +1,10 @@
 
-using ProjectLibrary.Business;
+using ProjetLibrary.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectLibrary.Mapper
+namespace ProjetLibrary.Mapper
 {
 	public class RoleMapper {
        

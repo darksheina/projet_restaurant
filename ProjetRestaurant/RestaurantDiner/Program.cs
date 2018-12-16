@@ -1,7 +1,5 @@
 ﻿using ProjectLibrary.Business;
-using ProjectLibrary.Service;
 using ProjetLibrary.Business.RestaurantDinerRoom;
-using RestaurantDinerRoom.DALandBLL.Service;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -15,7 +13,7 @@ namespace RestaurantDiner
             Scenario scenario;
             scenario = new Scenario();
             scenario.ExecuteScenario();
-
+           
 
         }
     }

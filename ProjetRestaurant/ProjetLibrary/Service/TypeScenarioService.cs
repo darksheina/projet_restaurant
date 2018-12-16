@@ -1,11 +1,11 @@
-using ProjectLibrary.Business;
-using ProjectLibrary.Mapper;
+using ProjetLibrary.Business;
+using ProjetLibrary.Mapper;
 using ProjetLibrary.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectLibrary.Service
+namespace ProjetLibrary.Service
 {
     public class TypeScenarioService
     {

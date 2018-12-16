@@ -1,8 +1,8 @@
-using ProjectLibrary.Business;
+using ProjetLibrary.Business;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectLibrary.Mapper
+namespace ProjetLibrary.Mapper
 {
     public class ActionMapper
     {
@@ -13,7 +13,8 @@ namespace ProjectLibrary.Mapper
             {
                 ID = action.ID,
                 Entitled = action.Entitled,
-                MethodRef = action.MethodRef
+                MethodRef = action.MethodRef,
+                Role = action.Role != null ? RoleMapper.Map(action.Role) : null,
             };
         }
         //Tranform a ActionBusiness object into a ActionDAO object
@@ -24,7 +25,8 @@ namespace ProjectLibrary.Mapper
             {
                 ID = action.ID,
                 Entitled = action.Entitled,
-                MethodRef = action.MethodRef
+                MethodRef = action.MethodRef,
+                Role = action.Role != null ? RoleMapper.Map(action.Role) : null,
 
             };
 
