@@ -1,0 +1,11 @@
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\TestServer.exe.config
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\TestServer.exe
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\TestServer.pdb
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\SocketHelper.dll
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\SocketHelper.pdb
+C:\Users\Marine\source\repos\TestServer\TestServer\obj\Debug\TestServer.csproj.CoreCompileInputs.cache
+C:\Users\Marine\source\repos\TestServer\TestServer\obj\Debug\TestServer.csproj.CopyComplete
+C:\Users\Marine\source\repos\TestServer\TestServer\obj\Debug\TestServer.exe
+C:\Users\Marine\source\repos\TestServer\TestServer\obj\Debug\TestServer.pdb
+C:\Users\Marine\source\repos\TestServer\TestServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Marine\source\repos\TestServer\TestServer\obj\Debug\TestServer.csprojAssemblyReference.cache

@@ -1,0 +1,10 @@
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\bin\Debug\SocketHelper.dll
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\bin\Debug\SocketHelper.pdb
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.csproj.CoreCompileInputs.cache
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.dll
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.pdb
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.csprojAssemblyReference.cache
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.Properties.Resources.resources
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.csproj.GenerateResource.cache
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\bin\Debug\Newtonsoft.Json.dll
+D:\exia\A3\projets\programmation_systeme\socket\SocketHelper\SocketHelper\obj\Debug\SocketHelper.csproj.CopyComplete
