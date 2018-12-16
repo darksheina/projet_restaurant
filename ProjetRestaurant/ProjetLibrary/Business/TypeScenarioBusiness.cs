@@ -1,5 +1,5 @@
 using System;
-namespace ProjectLibrary.Business
+namespace ProjetLibrary.Business
 {
 	public class TypeScenarioBusiness
     {

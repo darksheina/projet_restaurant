@@ -53,7 +53,11 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         }
         public void Eat()
         {
-            throw new System.Exception("Not implemented");
+            Console.WriteLine("Tu as appelé la méthode Eat() et elle te dis : Je mange");
+        }
+        public void Drink()
+        {
+            Console.WriteLine("Tu as appelé la méthode Drink() et elle te dis : je bois ");
         }
         public int GetGroupNumber()
         {

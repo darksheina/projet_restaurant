@@ -1,10 +1,11 @@
-using ProjectLibrary.Business;
-using ProjectLibrary.Mapper;
-using ProjectLibrary.Persistance;
+using ProjetLibrary.Business;
+using ProjetLibrary.Mapper;
+using ProjetLibrary.Persistance;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectLibrary.Service
+namespace ProjetLibrary.Service
 {
     public class ActionService {
 
@@ -29,10 +30,21 @@ namespace ProjectLibrary.Service
             }
 			
 		}
-		public void Get(string name) {
-			//ToDo
-		}
-		public void Update(ActionBusiness action) {
+        //Get by Id
+        /*public ActionBusiness Get(int id) {
+            var result = ActionMapper.Map((from p in context.Action where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}", result.Entitled); //Test Console
+            return result;
+        }*/
+
+            // Get by action title
+        public ActionBusiness Get(string name)
+        {
+            var result = ActionMapper.Map((from p in context.Action where p.Entitled == name select p).FirstOrDefault());
+            return result;
+        }
+
+        public void Update(ActionBusiness action) {
             var entity = context.Action.Find(action.ID);
             if (entity != null)
             {
@@ -44,7 +56,7 @@ namespace ProjectLibrary.Service
 		}
         public List<ActionBusiness> Select()
         {
-            return (from p in context.Action select ActionMapper.Map(p)).ToList();
+            return ActionMapper.Map((from p in context.Action select p).ToList());
         }
 
 

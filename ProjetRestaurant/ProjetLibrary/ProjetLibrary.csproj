@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\ActionBusiness.cs" />
+    <Compile Include="Business\RestaurantDinerRoom\Test.cs" />
     <Compile Include="Business\RestaurantKitchen\AssistantCook.cs" />
     <Compile Include="Business\RestaurantKitchen\Chef.cs" />
     <Compile Include="Business\RestaurantKitchen\Food.cs" />
@@ -66,24 +69,42 @@
     <Compile Include="Business\RestaurantDinerRoom\PersonFactory.cs" />
     <Compile Include="Business\RestaurantDinerRoom\Scenario.cs" />
     <Compile Include="Business\RestaurantDinerRoom\Table.cs" />
-    <Compile Include="Business\RoleActionBusiness.cs" />
     <Compile Include="Business\RoleBusiness.cs" />
     <Compile Include="Business\ScenarioBusiness.cs" />
     <Compile Include="Business\TypeScenarioBusiness.cs" />
     <Compile Include="Mapper\ActionMapper.cs" />
-    <Compile Include="Mapper\RoleActionMapper.cs" />
     <Compile Include="Mapper\RoleMapper.cs" />
     <Compile Include="Mapper\ScenarioMapper.cs" />
     <Compile Include="Mapper\TypeScenarioMapper.cs" />
-    <Compile Include="Persistance\ActionDAO.cs" />
-    <Compile Include="Persistance\DatabaseContext.cs" />
-    <Compile Include="Persistance\RoleActionDAO.cs" />
-    <Compile Include="Persistance\RoleDAO.cs" />
-    <Compile Include="Persistance\ScenarioDAO.cs" />
-    <Compile Include="Persistance\TypeScenarioDAO.cs" />
+    <Compile Include="Persistance\Action.cs">
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\DatabaseRestaurant.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseRestaurant.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\DatabaseRestaurant.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Database.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Role.cs">
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\Scenario.cs">
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Persistance\TypeScenario.cs">
+      <DependentUpon>DatabaseRestaurant.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ActionService.cs" />
-    <Compile Include="Service\RoleActionService.cs" />
     <Compile Include="Service\RoleService.cs" />
     <Compile Include="Service\ScenarioService.cs" />
     <Compile Include="Service\TypeScenarioService.cs" />
@@ -91,6 +112,29 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="Persistance\Database.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Persistance\Database.edmx.diagram">
+      <DependentUpon>Database.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Persistance\DatabaseRestaurant.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>DatabaseRestaurant.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Persistance\DatabaseRestaurant.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database.edmx</DependentUpon>
+      <LastGenOutput>DatabaseRestaurant.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

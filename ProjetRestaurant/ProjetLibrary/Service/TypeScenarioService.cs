@@ -1,11 +1,11 @@
-using ProjectLibrary.Business;
-using ProjectLibrary.Mapper;
-using ProjectLibrary.Persistance;
+using ProjetLibrary.Business;
+using ProjetLibrary.Mapper;
+using ProjetLibrary.Persistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectLibrary.Service
+namespace ProjetLibrary.Service
 {
     public class TypeScenarioService
     {
@@ -30,10 +30,19 @@ namespace ProjectLibrary.Service
                 context.SaveChanges();
             }
         }
-        public TypeScenarioBusiness Get(int id)
+        //Get by id
+        /*public TypeScenarioBusiness Get(int id)
         {
+            var result = TypeScenarioMapper.Map((from p in context.TypeScenario where p.ID == id select p).FirstOrDefault());
+            Console.WriteLine("Result = {0}",result.Entitled); //Test Console
+            return result;
+        }*/
 
-            return (from p in context.TypeScenario where p.ID == id select TypeScenarioMapper.Map(p)).FirstOrDefault();
+        //Get by name
+        public TypeScenarioBusiness Get(string name)
+        {
+            var result = TypeScenarioMapper.Map((from p in context.TypeScenario where p.Entitled == name select p).FirstOrDefault());
+            return result;
         }
         public void Update(TypeScenarioBusiness scenarioType)
         {
@@ -46,7 +55,7 @@ namespace ProjectLibrary.Service
         }
         public List<TypeScenarioBusiness> Select()
         {
-            return (from p in context.TypeScenario select TypeScenarioMapper.Map(p)).ToList();
+            return TypeScenarioMapper.Map((from p in context.TypeScenario select p).ToList());
         }
 
     }

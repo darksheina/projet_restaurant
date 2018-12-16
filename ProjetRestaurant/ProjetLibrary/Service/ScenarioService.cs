@@ -1,11 +1,11 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using ProjectLibrary.Persistance;
-using ProjectLibrary.Business;
-using ProjectLibrary.Mapper;
+using ProjetLibrary.Persistance;
+using ProjetLibrary.Business;
+using ProjetLibrary.Mapper;
 
-namespace ProjectLibrary.Service
+namespace ProjetLibrary.Service
 {
     public class ScenarioService {
         DatabaseContext context;
@@ -27,14 +27,6 @@ namespace ProjectLibrary.Service
                 context.SaveChanges();
             }
         }
-        public void Get(string name) {
-            ScenarioBusiness scenario;
-            scenario = new ScenarioBusiness();
-            name = scenario.Description;
-            var entity = context.Scenario.Find(scenario.Description);
-            Console.WriteLine("Description :"+ entity.Description+"OrderStage :"+ entity.OrderStage);
-            Console.Read();
-        }
         public void Update(ScenarioBusiness scenario) {
             var entity = context.Scenario.Find(scenario.ID);
             if (entity != null)
@@ -48,10 +40,22 @@ namespace ProjectLibrary.Service
 
         public List<ScenarioBusiness> Select()
         {
-            throw new NotImplementedException();
-            //return (from p in context.Scenario.Include(i=>i.Action).Include(i=>i.ScenarioType)
-                    //select ScenarioMapper.Map(p)).ToList();
+            return ScenarioMapper.Map((from p in context.Scenario select p).ToList());
         }
+
+        //Get by id
+        public ScenarioBusiness Get(int id)
+        {
+            var result = ScenarioMapper.Map((from p in context.Scenario where p.ID == id select p).FirstOrDefault());
+            return result;
+        }
+
+        public List<ScenarioBusiness> GetScenarioLines(int id)
+        {
+            Console.WriteLine("je suis dans getScenarioLines()");
+            return ScenarioMapper.Map((from p in context.Scenario where p.ID_type_scenario == id select p ).ToList());
+        }
+
     }
 
 }
