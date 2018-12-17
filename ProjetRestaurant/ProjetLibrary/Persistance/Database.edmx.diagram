@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c4142da56a5a44909a32c4a3fcef5c99" Name="Diagram1">
-        <EntityTypeShape EntityType="RestaurantModel.Action" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantModel.Action" Width="1.5" PointX="2.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RestaurantModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantModel.Scenario" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="RestaurantModel.TypeScenario" Width="1.5" PointX="3.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantModel.Scenario" Width="1.5" PointX="5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RestaurantModel.TypeScenario" Width="1.5" PointX="7.125" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="RestaurantModel.FK_Action_Role" ManuallyRouted="false" />
         <AssociationConnector Association="RestaurantModel.FK_scenario_ID_action" ManuallyRouted="false" />
         <AssociationConnector Association="RestaurantModel.FK_scenario_ID_type_scenario" ManuallyRouted="false" />

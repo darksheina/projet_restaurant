@@ -31,9 +31,14 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         {
             throw new System.Exception("Not implemented");
         }
-        public void CleanTable(int iDTable, Table.TableStatus status)
+        public void CleanTable()
         {
-            throw new System.Exception("Not implemented");
+            Console.WriteLine("Le Serveur débarasse la table");
+        }
+
+        public void GiveTheOrder()
+        {
+            Console.WriteLine("Le Serveur donne les commandes aux clients");
         }
         public void GetOrdersFromGroup(CustomerGroup customerGroup)
         {

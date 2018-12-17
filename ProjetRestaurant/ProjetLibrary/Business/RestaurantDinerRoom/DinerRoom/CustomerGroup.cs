@@ -48,11 +48,11 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         }
         public void Eat()
         {
-            Console.WriteLine("Tu as appelé la méthode Eat() et elle te dis : Je mange");
+            Console.WriteLine("Les clients mangent");
         }
         public void Drink()
         {
-            Console.WriteLine("Tu as appelé la méthode Drink() et elle te dis : je bois ");
+            Console.WriteLine("Les clients boient");
         }
         public int GetGroupNumber()
         {
@@ -92,6 +92,10 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
             }
         }
 
+        public void Pay()
+        {
+            Console.WriteLine("Les clients payent leur repas");
+        }
         public void ChooseOrder()
          {
              // TODO : modifier ?
