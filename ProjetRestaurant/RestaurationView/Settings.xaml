@@ -7,27 +7,31 @@
         mc:Ignorable="d"
         Title="Settings" Height="450" Width="800">
     <Grid>
+        
+          
+            
+       
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="228,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="228,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.475,1.913"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="228,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="228,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="228,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="228,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="228,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"/>
+        <Label Content="Number of client" HorizontalAlignment="Left" Margin="392,40,0,0" VerticalAlignment="Top" Width="110" Height="27"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="544,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <CheckBox Content="Fast" HorizontalAlignment="Left" Margin="496,95,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Slow" HorizontalAlignment="Left" Margin="496,130,0,0" VerticalAlignment="Top"/>
+        <Button Content="Save" Click="Button_Click" HorizontalAlignment="Left" Margin="642,266,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Butler" HorizontalAlignment="Left" Margin="45,54,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label Content="HeadWaiter" HorizontalAlignment="Left" Margin="45,105,0,0" VerticalAlignment="Top"/>
+        <Label Content="Waiter" HorizontalAlignment="Left" Margin="45,157,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assistant" HorizontalAlignment="Left" Margin="45,208,0,0" VerticalAlignment="Top"/>
+        <Label Content="Head Chef" HorizontalAlignment="Left" Margin="45,262,0,0" VerticalAlignment="Top"/>
+        <Label Content="Chef" HorizontalAlignment="Left" Margin="45,314,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assistant cook" HorizontalAlignment="Left" Margin="45,371,0,0" VerticalAlignment="Top"/>
+        <Label Content="Number of :" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="Butler" Margin="0,34,701,352"/>
-        <Label Content="HeadWaiter" Margin="0,72,701,317" RenderTransformOrigin="0.604,1.667"/>
-        <Label Content="Waiter" Margin="0,102,701,283"/>
-        <Label Content="Assistant" Margin="0,0,701,256" Height="27" VerticalAlignment="Bottom"/>
-        <Label Content="HeadChef" Margin="0,163,701,225"/>
-        <Label Content="Chef" Margin="0,194,701,198"/>
-        <Label Content="Assitant Cook" Margin="0,226,701,167"/>
 
-        <Button Content="Save" Click="Save_Click" HorizontalAlignment="Left" Margin="670,362,0,0" VerticalAlignment="Top" Width="74"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="139,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="139,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="139,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_2"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="139,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_3"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="139,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_4"/>
-        <TextBox HorizontalAlignment="Left" Height="26" Margin="139,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_5"/>
-        <Label Content="Number of" HorizontalAlignment="Left" Margin="139,0,0,0" VerticalAlignment="Top"/>
-        <Label Content="Group Client" HorizontalAlignment="Left" Margin="402,0,0,0" VerticalAlignment="Top" Height="30" Width="88"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="461,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Number of " HorizontalAlignment="Left" Margin="346,34,0,0" VerticalAlignment="Top" Width="80"/>
-        <CheckBox Content="Fast" HorizontalAlignment="Left" Margin="442,81,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
-        <CheckBox Content="slow" HorizontalAlignment="Left" Margin="442,113,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1"/>
     </Grid>
 </Window>
