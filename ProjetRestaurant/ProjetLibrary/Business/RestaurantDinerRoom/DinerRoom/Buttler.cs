@@ -20,18 +20,9 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
             return customerGroup.GroupNumber;
         }
 
-		public void TableAttribution(CustomerGroup group, Table table)
+		public void TableAttribution()
         {
-            // Methode à ameliorer pour un meilleur choix des tables
-            if (group.GroupNumber <= table.SeatNumber)
-            {
-                group.SetGroupID(table.IDTable);
-                table.status = Table.TableStatus.taken;
-            }
-            else if (group.GroupNumber >= table.SeatNumber)
-            {
-                Console.WriteLine("Autre table requise");
-            }
+            Console.WriteLine("Le Maitre d'hotel attribue une table aux clients");
 		}
 
 		public void CallHeadWaiter() {

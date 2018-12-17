@@ -53,7 +53,7 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
             Console.WriteLine("Quel scenario executer ? :");
             string text = Console.ReadLine();
             var id = typescenario.Get(text);
-            Console.WriteLine("id = {0}", id.ID);
+            //Console.WriteLine("id = {0}", id.ID);
             return id.ID;
 
         }
@@ -63,13 +63,6 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
             ScenarioService scenarioservice;
             scenarioservice = new ScenarioService();
             List<ScenarioBusiness> lines = scenarioservice.GetScenarioLines(GetTypeScenario());
-            Console.WriteLine("\n");
-            lines.OrderBy(x => x.OrderStage);
-            /*foreach (var item in lines.OrderBy(x => x.OrderStage))
-            {
-                Console.WriteLine("Description du Scenario : " + item.Description+ " \nAction : " + item.Action.MethodRef+ " \n Ordre :" +item.OrderStage + "\n Role :"+ item.Action.Role.Entitled);
-            }*/
-            
             return lines;
         }
 
@@ -77,7 +70,7 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom
         {
             List<ScenarioBusiness> linesB;
             linesB = GetAllScenarioLines();
-            foreach (var item in linesB)
+            foreach (var item in linesB.OrderBy(x => x.OrderStage))
             {
                     //Console.WriteLine("Methode à laquelle on fait réference : "+item.Action.MethodRef);
                     //Console.WriteLine("Utiliser par le role :" +item.Action.Role.Entitled);

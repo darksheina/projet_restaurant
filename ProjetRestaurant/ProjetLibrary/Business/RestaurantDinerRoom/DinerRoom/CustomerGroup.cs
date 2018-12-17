@@ -54,6 +54,11 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
         {
             Console.WriteLine("Les clients boient");
         }
+
+        public void Arrival()
+        {
+            Console.WriteLine("Un groupe de clients arrivent");
+        }
         public int GetGroupNumber()
         {
             return this.GroupNumber;
@@ -91,7 +96,10 @@ namespace ProjetLibrary.Business.RestaurantDinerRoom.DinerRoom
                 this.GroupOrder.Add(food);
             }
         }
-
+        public void GiveOrder()
+        {
+            Console.WriteLine("Les clients donnent leur commande au serveur");
+        }
         public void Pay()
         {
             Console.WriteLine("Les clients payent leur repas");

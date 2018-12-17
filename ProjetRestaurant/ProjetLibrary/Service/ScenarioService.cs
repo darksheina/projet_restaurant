@@ -52,7 +52,6 @@ namespace ProjetLibrary.Service
 
         public List<ScenarioBusiness> GetScenarioLines(int id)
         {
-            Console.WriteLine("je suis dans getScenarioLines()");
             return ScenarioMapper.Map((from p in context.Scenario where p.ID_type_scenario == id select p ).ToList());
         }
 
