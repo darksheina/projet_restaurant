@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantDiner", "Restaura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketHelper", "SocketHelper\SocketHelper\SocketHelper.csproj", "{376F9290-0B43-4A1D-9F74-E095D173B4F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "..\TestClient\TestClient\TestClient.csproj", "{A7A83B54-2F8F-42DE-9E5E-C88BA0BD0018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServer", "..\TestServer\TestServer\TestServer.csproj", "{E5BF4B29-E9BC-43CA-B566-77C954C4424C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{376F9290-0B43-4A1D-9F74-E095D173B4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{376F9290-0B43-4A1D-9F74-E095D173B4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{376F9290-0B43-4A1D-9F74-E095D173B4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A83B54-2F8F-42DE-9E5E-C88BA0BD0018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A83B54-2F8F-42DE-9E5E-C88BA0BD0018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A83B54-2F8F-42DE-9E5E-C88BA0BD0018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A83B54-2F8F-42DE-9E5E-C88BA0BD0018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BF4B29-E9BC-43CA-B566-77C954C4424C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BF4B29-E9BC-43CA-B566-77C954C4424C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BF4B29-E9BC-43CA-B566-77C954C4424C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BF4B29-E9BC-43CA-B566-77C954C4424C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
